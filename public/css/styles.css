@@ -2,14 +2,8 @@ body {
   position: relative;
   font-size: 20px; }
 
-menu {
-  margin: 0;
-  padding: 0;
-}
-
 .modal-header {
-  background: url("../images/header-bg.jpg") 0 86% no-repeat;
-}
+  background: url("../images/header-bg.jpg") 0 86% no-repeat; }
 
 .modal-dialog {
   margin-top: 200px; }
@@ -48,63 +42,3 @@ menu {
   background-color: #009688; }
 
 /*# sourceMappingURL=styles.css.map */
-
-main {
-  min-height: 900px;
-}
-
-footer {
-  height: 100px;
-}
-
-.social {
-  list-style: none;
-}
-
-.social li {
-  float: left;
-  margin-right: 127px;
-}
-
-.social a {
-  background-image: url(../images/social.png);
-  height: 88px;
-  width: 92px;
-  display: block;
-}
-
-.twitter a{
-  background-position: left top;
-}
-
-.twitter a:hover {
-  background-position: left bottom;
-}
-
-.facebook a {
-  background-position: 25% top;
-}
-
-.facebook a:hover {
-  background-position: 25% bottom;
-}
-
-.dribbble a {
-  background-position: 75% top;
-}
-
-.dribbble a:hover {
-  background-position: 75% bottom;
-}
-
-li.instagram {
-  margin-right: 0;
-}
-
-.instagram a {
-  background-position: 100% top;
-}
-
-.instagram a:hover {
-  background-position: 100% bottom;
-}
