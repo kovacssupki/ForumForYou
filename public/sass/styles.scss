@@ -1,18 +1,54 @@
+$turquoise:#31A5E7;
+
+@mixin border-radius($radius:10px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
     position: relative;
     font-size: 20px;
 }
-.modal-header{
-  background-color: #31A5E7;
+.navbar{
+    &.navbar-default{
+    // background-color: #1873BC;
+    padding-top: 5px;
+    li {
+      font-size: 20px;
+      a{
+        &:hover{
+          color:#86592d
+        }
+      }
+    }
+    .navbar-header{
+      .navbar-brand{
+        font-size: 30px;
+        padding-top: 12px;
+      }
+    }
+  }
 }
+.dropdown{
+  .dropdown-menu{
+    li{
+      a{
+        padding: 30px;
+      }
+    }
+  }
+}
+
 .modal-dialog{
   margin-top: 200px;
+  .modal-header{
+    background-color: $turquoise;
+  }
+  .modal-body{
+    padding: 50px;
+  }
 }
-.modal-body{
-  padding: 50px;
-}
-#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
-#section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
-#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
-#section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}

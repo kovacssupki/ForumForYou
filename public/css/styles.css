@@ -1,18 +1,12 @@
-body {
-    position: relative;
-    font-size: 20px;
-}
-.modal-header{
-  background-color: #31A5E7;
-}
-.modal-dialog{
-  margin-top: 200px;
-}
-.modal-body{
-  padding: 50px;
-}
-#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
-#section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
-#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
-#section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+body { position: relative; font-size: 20px; }
+
+.navbar.navbar-default { padding-top: 5px; }
+.navbar.navbar-default li { font-size: 20px; }
+.navbar.navbar-default li a:hover { color: #86592d; }
+.navbar.navbar-default .navbar-header .navbar-brand { font-size: 30px; padding-top: 12px; }
+
+.dropdown .dropdown-menu li a { padding: 30px; }
+
+.modal-dialog { margin-top: 200px; }
+.modal-dialog .modal-header { background-color: #31a5e7; }
+.modal-dialog .modal-body { padding: 50px; }
