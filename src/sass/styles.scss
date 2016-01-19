@@ -1,9 +1,11 @@
+$images: '../assets/images';
+
 body {
     position: relative;
     font-size: 20px;
 }
 .modal-header{
-  background: url("../images/header-bg.jpg") 0 86% no-repeat;
+  background: url($images+'/header-bg.jpg') 77% 68% no-repeat;
 }
 
 .modal-dialog{
@@ -12,6 +14,14 @@ body {
 .modal-body{
   padding: 50px;
 }
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+@import '_footer';
+
 #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
 #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
 #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
