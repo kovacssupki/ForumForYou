@@ -1,5 +1,5 @@
 angular.module('Blog')
-    .directive('footer',function(){
+    .directive('customFooter',function(){
         return{
             restrict:'E',
             templateUrl:'views/directives/footer.html'
