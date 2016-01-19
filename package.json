@@ -1,6 +1,6 @@
 {
   "name": "ForumForYou",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "An example module to illustrate the usage of a package.json",
   "author": "Fortech",
   "contributors": [
@@ -18,5 +18,8 @@
     "gulp": "^3.9.0",
     "gulp-cli": "^1.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  }
 }
