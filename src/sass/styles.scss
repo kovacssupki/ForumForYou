@@ -1,3 +1,4 @@
+
 $turquoise:#31A5E7;
 
 @mixin border-radius($radius:10px) {
@@ -7,8 +8,9 @@ $turquoise:#31A5E7;
        -o-border-radius: $radius;
           border-radius: $radius;
 }
+$images: '../assets/images';
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 body {
     position: relative;
     font-family: 'Raleway', sans-serif;
@@ -45,6 +47,8 @@ body {
       }
     }
   }
+.modal-header{
+  background: url($images+'/header-bg.jpg') 77% 68% no-repeat;
 }
 
 .modal-dialog{
@@ -56,3 +60,19 @@ body {
     padding: 50px;
   }
 }
+.modal-body{
+  padding: 50px;
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+@import '_footer';
+
+#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+#section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+#section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
