@@ -1,14 +1,13 @@
 <div class="container">
-    <article class="panel panel-default">
-        <div class="panel-heading">Fun facts!</div>
-        <div class="panel-body text-justify"><a href="#articles/6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor metus varius elementum venenatis...</a></div>
-    </article>
-    <article class="panel panel-warning">
-        <div class="panel-heading">Learning Angular JS</div>
-        <div class="panel-body text-justify"><a href="#articles/5">Nulla convallis justo est, eu lobortis arcu condimentum eu. In dignissim, erat eget bibendum dignissim, erat...</a></div>
-    </article>
-    <article class="panel panel-success">
-        <div class="panel-heading">Another article...</div>
-        <div class="panel-body text-justify"><a href="#articles/4">Sed convallis mauris id elementum ultricies. Morbi vitae lorem nec metus semper iaculis. Phasellus id elit mi...</a></div>
-    </article>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <article class="panel panel-default" ng-repeat="recentArticle in recentArticles">
+                <div class="panel-heading">{{ recentArticle.title }}</div>
+                <div class="panel-body text-justify"><a href="#/articles/{{ recentArticle.id }}">{{ recentArticle.contentTrimmed }}</a></div>
+            </article>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="well">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor metus varius elementum venenatis</div>
+        </div>
+    </div>
 </div>
