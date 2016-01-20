@@ -1,3 +1,13 @@
+@import '_include-media';
+
+$breakpoints: (
+        'phone': 320px,
+        'tablet': 768px,
+        'desktop': 992px,
+        'large desktop': 1200px
+
+) !default;
+
 $images: '../assets/images';
 
 body {
@@ -5,7 +15,7 @@ body {
     font-size: 20px;
 }
 .modal-header{
-  background: url($images+'/header-bg.jpg') 77% 68% no-repeat;
+  background: url($images + '/header-bg.jpg') 77% 68% no-repeat;
 }
 
 .modal-dialog{
@@ -20,10 +30,32 @@ menu {
   padding: 0;
 }
 
+@import '_home';
 @import '_footer';
 
-#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
-#section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
-#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
-#section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
-#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+@mixin section-style($padding, $height, $color, $back-color) {
+  padding-top: $padding;
+  height: $height;
+  color: $color;
+  background-color: $back-color;
+};
+
+#section1 {
+  @include section-style(50px, 500px, #fff, #1E88E5);
+}
+
+#section2 {
+  @include section-style(50px, 500px, #fff, #673ab7);
+}
+
+#section3 {
+  @include section-style(50px, 500px, #fff, #ff9800);
+}
+
+#section41 {
+  @include section-style(50px, 500px, #fff, #00bcd4);
+}
+
+#section42 {
+  @include section-style(50px, 500px, #fff, #009688);
+}
