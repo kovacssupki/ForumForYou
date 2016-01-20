@@ -1,11 +1,12 @@
-body { position: relative; font-size: 20px; }
+body { position: relative; font-family: 'Raleway', sans-serif; font-size: 20px; }
 
-.navbar.navbar-default { padding-top: 5px; }
+.navbar.navbar-default { padding-top: 10px; }
 .navbar.navbar-default li { font-size: 20px; }
-.navbar.navbar-default li a:hover { color: #86592d; }
+.navbar.navbar-default li a { padding: 15px; }
+.navbar.navbar-default li a:hover { color: #86592d; border: 1px solid #86592d; -webkit-border-radius: 15px; -moz-border-radius: 15px; -ms-border-radius: 15px; -o-border-radius: 15px; border-radius: 15px; }
 .navbar.navbar-default .navbar-header .navbar-brand { font-size: 30px; padding-top: 12px; }
 
-.dropdown .dropdown-menu li a { padding: 30px; }
+.dropdown .dropdown-menu li a { padding: 20px; }
 
 .modal-dialog { margin-top: 200px; }
 .modal-dialog .modal-header { background-color: #31a5e7; }

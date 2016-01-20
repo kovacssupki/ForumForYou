@@ -11,17 +11,21 @@ $turquoise:#31A5E7;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
     position: relative;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
 }
 .navbar{
     &.navbar-default{
     // background-color: #1873BC;
-    padding-top: 5px;
+    padding-top: 10px;
     li {
       font-size: 20px;
       a{
+        padding: 15px;
         &:hover{
-          color:#86592d
+          color:#86592d;
+          border: 1px solid #86592d;
+          @include border-radius(15px);
         }
       }
     }
@@ -37,7 +41,7 @@ body {
   .dropdown-menu{
     li{
       a{
-        padding: 30px;
+        padding: 20px;
       }
     }
   }
