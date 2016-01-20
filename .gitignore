@@ -36,3 +36,5 @@ node_modules
 .idea
 .idea/ForumForYou.iml
 *.iml
+.sass-cache
+public/css/styles.css
