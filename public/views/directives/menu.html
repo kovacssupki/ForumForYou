@@ -1,5 +1,5 @@
-<div class="container-fluid text-center"></div>
 
+<div class="container-fluid text-center"></div>
 <nav class="navbar navbar-default" data-spy="affix" data-offset-top="450">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,11 +62,11 @@
           </div> <!-- end of modal-dialog -->
         </div> <!-- end of modal -->
 
-        <li class="dropdown">
+        <li class="dropdown" id="connect">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Connect <i class="fa fa-caret-down"></i></a>
           <ul class="dropdown-menu">
             <li><a ui-sref="signup"><i class="fa fa-user-plus fa-lg"></i> Sign up</a></li>
-            <li><a ui-sref="login"><i class="fa fa-sign-in fa-lg"></i> Log In</a></li>
+            <li><a ui-sref="login" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in fa-lg"></i> Log In</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#"><i class="fa fa-power-off fa-lg"></i> Sign out</a></li>
           </ul>
@@ -75,3 +75,11 @@
     </div><!-- end of navbar-collapse -->
   </div><!-- end of container -->
 </nav>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#connect').hover(function () {
+            $('.dropdown-menu').stop(true).fadeToggle(350);
+    });
+});
+</script>

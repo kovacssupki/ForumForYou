@@ -1,3 +1,4 @@
+
 @import '_include-media';
 
 $breakpoints: (
@@ -7,12 +8,53 @@ $breakpoints: (
         'large desktop': 1200px
 
 ) !default;
-
+$turquoise:#31A5E7;
+@mixin border-radius($radius:10px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
 $images: '../assets/images';
+
 
 body {
     position: relative;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
+}
+.navbar{
+    &.navbar-default{
+    // background-color: #1873BC;
+    padding-top: 10px;
+    li {
+      font-size: 20px;
+      a{
+        padding: 15px;
+        &:hover{
+          color:#86592d;
+          border: 1px solid #86592d;
+          @include border-radius(15px);
+        }
+      }
+    }
+    .navbar-header{
+      .navbar-brand{
+        font-size: 30px;
+        padding-top: 12px;
+      }
+    }
+  }
+}
+.dropdown{
+  .dropdown-menu{
+    li{
+      a{
+        padding: 20px;
+      }
+    }
+  }
 }
 .modal-header{
   background: url($images + '/header-bg.jpg') 77% 68% no-repeat;
@@ -20,6 +62,12 @@ body {
 
 .modal-dialog{
   margin-top: 200px;
+  .modal-header{
+    background-color: $turquoise;
+  }
+  .modal-body{
+    padding: 50px;
+  }
 }
 .modal-body{
   padding: 50px;

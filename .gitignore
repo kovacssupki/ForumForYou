@@ -6,3 +6,7 @@
 .*
 !.gitignore
 node_modules
+.idea/ForumForYou.iml
+*.iml
+.sass-cache
+public/css/styles.css
