@@ -36,17 +36,12 @@ body {
 }
 
 .navbar{
-  &.navbar-default{
-  // background-color: #1873BC;
-  padding-top: 10px;
-  li {
-    font-size: 20px;
-    a{
-      padding: 15px;
-      &:hover{
-        color:#86592d;
-        border: 1px solid #86592d;
-        @include border-radius(15px);
+    &.navbar-default{
+    // background-color: $turquoise;
+    li {
+      font-size: 20px;
+      a{
+        padding: 10px;
       }
     }
   }
@@ -57,7 +52,6 @@ body {
       }
     }
   }
-}
 .dropdown{
   .dropdown-menu{
     li{
@@ -93,29 +87,3 @@ menu {
 @import 'articles';
 @import '_footer';
 
-@mixin section-style($padding, $height, $color, $back-color) {
-  padding-top: $padding;
-  height: $height;
-  color: $color;
-  background-color: $back-color;
-};
-
-#section1 {
-  @include section-style(50px, 500px, #fff, #1E88E5);
-}
-
-#section2 {
-  @include section-style(50px, 500px, #fff, #673ab7);
-}
-
-#section3 {
-  @include section-style(50px, 500px, #fff, #ff9800);
-}
-
-#section41 {
-  @include section-style(50px, 500px, #fff, #00bcd4);
-}
-
-#section42 {
-  @include section-style(50px, 500px, #fff, #009688);
-}

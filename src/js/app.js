@@ -18,9 +18,9 @@ angular.module('Blog',['ui.router','ui.bootstrap'])
          url:'/signup',
          templateUrl:'views/signup.html'
       })
-      .state('login',{
-         url:'/login',
-         templateUrl:'views/login.html'
+      .state('about',{
+         url:'/about',
+         templateUrl:'views/about.html'
       })
        $urlRouterProvider.otherwise("/");
    }]);
