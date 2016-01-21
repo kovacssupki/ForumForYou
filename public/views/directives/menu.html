@@ -28,8 +28,8 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" data-toggle="modal" data-target="#contactModal">Contact</a></li>
-        <li class="dropdown" id="connect">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Connect <i class="fa fa-caret-down"></i></a>
+        <li class="dropdown" id="connect" data-drop-down="dropdown-menu">
+          <a href="#" class="dropdown-toggle" aria-expanded="false">Connect <i class="fa fa-caret-down"></i></a>
           <ul class="dropdown-menu">
             <li><a ui-sref="signup"><i class="fa fa-user-plus fa-lg"></i> Sign up</a></li>
             <li><a data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in fa-lg" ></i> Log In</a></li>
@@ -110,10 +110,3 @@
   </div>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function () {
-    $('#connect').hover(function () {
-            $('.dropdown-menu').stop(true).slideToggle(350);
-    });
-});
-</script>
