@@ -18,6 +18,9 @@ custom-footer {
       @include media('<=tablet') {
         margin-right: 92px;
       }
+      @include media('<=phone') {
+        margin-right: 18px;
+      }
     }
 
     a {
@@ -35,6 +38,11 @@ custom-footer {
         height: 28px;
         width: 30px;
         background-size: 150px;
+      }
+      @include media('<=phone') {
+        height: 25px;
+        width: 27px;
+        background-size: 135px;
       }
     }
 
