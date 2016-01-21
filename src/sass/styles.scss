@@ -1,6 +1,14 @@
+@import '_include-media';
 
 $turquoise:#31A5E7;
 $images: '../assets/images/';
+
+$breakpoints: (
+  'phone': 320px,
+  'tablet': 768px,
+  'desktop': 992px,
+  'large desktop': 1200px
+) !default;
 
 @mixin border-radius($radius:10px) {
   -webkit-border-radius: $radius;
@@ -17,6 +25,7 @@ $images: '../assets/images/';
 @import '_footer';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
+
   	background-image: url($images + 'b50.png');
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
@@ -25,12 +34,19 @@ main{
   padding: 50px;
   background-image: url($images + 'b48.png');
 }
-// .container-fluid{
-//   &.text-center{
-//     background: url("assets/images/header-bg.jpg") 0 86% no-repeat;
-//     height:450px;
-//   }
-// }
+
+
+.container-fluid.text-center {
+  background: url($images +"/header-bg.jpg") center 86% no-repeat;
+  height:450px;
+}
+
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
 .navbar{
     &.navbar-default{
     li {
@@ -40,6 +56,7 @@ main{
         padding: 10px;
       }
     }
+  }
     .navbar-header{
       .navbar-brand{
         font-size: 30px;
@@ -47,7 +64,6 @@ main{
       }
     }
   }
-}
 .dropdown{
   .dropdown-menu{
     li{
@@ -91,3 +107,7 @@ menu {
     padding: 20px;
   }
 }
+
+@import '_home';
+@import 'articles';
+@import '_footer';
