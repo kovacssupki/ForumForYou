@@ -17,15 +17,10 @@ $breakpoints: (
        -o-border-radius: $radius;
           border-radius: $radius;
 }
-@mixin linear-gradient($direction, $color-stops...) {
-  background: nth(nth($color-stops, 1), 1);
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-  background: linear-gradient($direction, $color-stops);
-}
+
 @import '_footer';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
-
   	background-image: url($images + 'b50.png');
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
@@ -34,8 +29,6 @@ main{
   padding: 50px;
   background-image: url($images + 'b48.png');
 }
-
-
 .container-fluid.text-center {
   background: url($images +"/header-bg.jpg") center 86% no-repeat;
   height:450px;
