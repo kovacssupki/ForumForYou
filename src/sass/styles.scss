@@ -1,5 +1,6 @@
 
 $turquoise:#31A5E7;
+$images: '../assets/images/';
 
 @mixin border-radius($radius:10px) {
   -webkit-border-radius: $radius;
@@ -8,17 +9,32 @@ $turquoise:#31A5E7;
        -o-border-radius: $radius;
           border-radius: $radius;
 }
-$images: '../assets/images';
-
+@mixin linear-gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+@import '_footer';
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
-    position: relative;
+  	background-image: url($images + 'b50.png');
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
 }
+main{
+  padding: 50px;
+  background-image: url($images + 'b48.png');
+}
+// .container-fluid{
+//   &.text-center{
+//     background: url("assets/images/header-bg.jpg") 0 86% no-repeat;
+//     height:450px;
+//   }
+// }
 .navbar{
     &.navbar-default{
-    // background-color: $turquoise;
     li {
+      padding-top: 10px;
       font-size: 20px;
       a{
         padding: 10px;
@@ -35,16 +51,18 @@ body {
 .dropdown{
   .dropdown-menu{
     li{
+      margin: 0;
+
       a{
-        padding: 20px;
+        padding: 15px;
+        margin: 0;
       }
     }
   }
 }
 .modal-header{
-  background: url($images+'/header-bg.jpg') 77% 68% no-repeat;
+  background: url($images +'header-bg.jpg') 77% 68% no-repeat;
 }
-
 .modal-dialog{
   margin-top: 200px;
   .modal-header{
@@ -57,10 +75,19 @@ body {
 .modal-body{
   padding: 50px;
 }
-
 menu {
   margin: 0;
   padding: 0;
 }
-
-@import '_footer';
+.signup{
+  margin-top: 30px;
+}
+.panel-body{
+  & p {
+    padding: 20px;
+    font-size: 25px;
+  }
+  & img{
+    padding: 20px;
+  }
+}
