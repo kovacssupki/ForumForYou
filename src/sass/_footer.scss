@@ -11,13 +11,31 @@ custom-footer {
     li {
       float: left;
       margin-right: 127px;
+
+      @include media('>tablet', '<large desktop') {
+        margin-right: 95px;
+      }
+      @include media('<=tablet') {
+        margin-right: 92px;
+      }
     }
 
     a {
-      background-image: url(../assets/images/social.png);
+      background-image: url("../assets/images/social.png");
       height: 88px;
       width: 92px;
       display: block;
+
+      @include media('>tablet', '<large desktop') { //'from', 'to' (<, <=, >, >=)
+        height: 44px;
+        width: 46px;
+        background-size: 230px;
+      }
+      @include media('<=tablet') {
+        height: 28px;
+        width: 30px;
+        background-size: 150px;
+      }
     }
 
     .twitter {
@@ -61,4 +79,3 @@ custom-footer {
     }
   }
 }
-

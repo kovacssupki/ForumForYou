@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+.iml
+.sass-cache
+/.sass-cache/*
+=======
 # Logs
 logs
 *.log
@@ -32,7 +37,14 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
-
+bower_components
+>>>>>>> 80ab7dfbce6af51b416316914a5a4d53eaa7bd67
 .idea
+.idea/*.xml
+.*
+!.gitignore
+node_modules
 .idea/ForumForYou.iml
 *.iml
+.sass-cache
+public/css/styles.css
