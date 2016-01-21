@@ -1,31 +1,8 @@
-span {
-  display: block;
-  float: left;
-  width: 200px;
-  height: 165px;
-
-  &.fun {
-    background: url("../assets/images/article-fun.png") center center no-repeat;
+article {
+  img {
+    display: block;
+    float: left;
+    width: 200px;
+    height: 165px;
   }
-
-  &.angular {
-    background: url("../assets/images/article-angular.png") center center no-repeat;
-  }
-
-  &.book {
-    background: url("../assets/images/article-book.png") center center no-repeat;
-  }
-
-  &.android {
-    background: url("../assets/images/article-android.png") center center no-repeat;
-  }
-
-  &.bio {
-    background: url("../assets/images/article-bio.png") center center no-repeat;
-  }
-
-  &.facebook {
-    background: url("../assets/images/article-facebook.png") center center no-repeat;
-  }
-
 }

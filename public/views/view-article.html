@@ -1,1 +1,12 @@
-bla
+<div class="container">
+    <a href="#/articles" class="btn btn-default">Back</a>
+    <br/>
+    <br/>
+    <article class="panel panel-default">
+        <div class="panel-heading">{{ article.title }}</div>
+        <div class="panel-body text-justify">
+            <img src="{{ article.image }}"/>
+            <p>{{ article.content }}</p>
+        </div>
+    </article>
+</div>
