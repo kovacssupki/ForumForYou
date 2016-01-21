@@ -90,6 +90,7 @@ menu {
 }
 
 @import '_home';
+@import 'articles';
 @import '_footer';
 
 @mixin section-style($padding, $height, $color, $back-color) {
