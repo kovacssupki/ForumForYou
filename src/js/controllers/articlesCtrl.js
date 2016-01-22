@@ -1,4 +1,6 @@
-angular.module('Blog').controller('articlesCtrl', ['$scope', function($scope) {
+angular
+.module('Blog')
+.controller('articlesCtrl', ['$scope', function($scope) {
     $scope.articles = [
         {
             title: 'Fun facts!',

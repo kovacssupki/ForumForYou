@@ -1,4 +1,10 @@
-angular.module('Blog').controller('viewArticleCtrl', ['$scope', '$stateParams', function($scope, $stateParams) {
+angular
+.module('Blog')
+.controller('viewArticleCtrl', [
+  '$scope',
+  '$stateParams',
+  function($scope, $stateParams) {
+    
     $scope.articles = {
         6: {
             title: 'Fun facts!',
