@@ -16,4 +16,9 @@ angular.module('Blog').controller('homeCtrl', ['$scope', function($scope) {
             id: 4
         }
     ];
+    $scope.styles = {
+        0 : 'default',
+        1 : 'danger',
+        2 : 'info'
+    };
 }]);

@@ -1,9 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-8">
-            <article class="panel panel-default" ng-repeat="recentArticle in recentArticles">
+            <article class="panel panel-{{ styles[$index%3] }}" ng-repeat="recentArticle in recentArticles">
                 <div class="panel-heading">{{ recentArticle.title }}</div>
-                <div class="panel-body text-justify"><a href="#/articles/{{ recentArticle.id }}">{{ recentArticle.contentTrimmed }}</a></div>
+                <div class="panel-body text-justify">
+                    <span>{{ recentArticle.contentTrimmed }}</span>
+                    <a href="#/articles/{{ recentArticle.id }}" class="text"><small class="text-{{ styles[$index%3] }}">Read More</small></a>
+                </div>
             </article>
         </div>
         <div class="col-xs-12 col-sm-4">
