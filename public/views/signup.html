@@ -8,7 +8,7 @@
         <div class="modal-body">
           <form name="userForm" ng-submit="signup(userForm)" novalidate>
             <!-- NAME -->
-            <div class="form-group">
+            <div class="form-group" ng-class="{'has-error': userForm.name.$invalid && userForm.name.$dirty, 'has-success': userForm.name.$valid && userForm.name.$dirty}">
                 <label>Name </label>
                 <input type="text" name="name" class="form-control"
                 ng-model="user.name">
@@ -56,6 +56,3 @@
         </div>
     </div>
 </div>
-<script>
-  document.getElementById("date").valueAsDate = new Date();
-</script>

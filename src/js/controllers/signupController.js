@@ -1,5 +1,10 @@
-angular.module('Blog')
-.controller('SignupController', function($scope) {
+angular
+    .module('Blog')
+    .controller('SignupController',
+    function($scope) {
+
+   $scope.user = {};
+   $scope.user.date = new Date();
 
    $scope.check_min_length = function(form){
       if(form.$error.minlength){
@@ -32,4 +37,13 @@ angular.module('Blog')
          alert('INCORECT CREDENTIALS! TRY AGAIN!');
       }
    };
+
+   $scope.apply_class = function(form){
+     if(form.$invalid && form.$dirty){
+       return true;
+     }
+     if(form.$valid && form.$dirty){
+       return true;
+     }
+   }
 });
