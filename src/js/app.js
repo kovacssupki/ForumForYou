@@ -1,5 +1,5 @@
 angular
     .module('Blog', [
         'ui.router',
-        'ui.bootstrap'
+        'ui.bootstrap',
     ]);
