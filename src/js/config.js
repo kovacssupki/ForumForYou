@@ -13,11 +13,13 @@ angular
                 })
                 .state('articles',{
                     url: '/articles',
-                    templateUrl:'views/articles.html'
+                    templateUrl:'views/articles.html',
+                    controller: 'articlesCtrl'
                 })
                 .state('viewArticle', {
                     url: '/articles/:id',
-                    templateUrl: 'views/view-article.html'
+                    templateUrl: 'views/view-article.html',
+                    controller: 'viewArticleCtrl'
                 })
                 .state('signup',{
                     url:'/signup',

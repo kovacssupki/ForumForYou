@@ -6,11 +6,11 @@ angular
         return {
             restrict: 'AC',
             link: function(scope, elem, attr) {
-                var slideSelector = angular.element('.' + attr.dropDown);
-                elem.bind('mouseover', function() {
+                var slideSelector = angular.element(document).find('.dropdown-menu');
+                elem.on('mouseover', function() {
                     slideSelector.stop(true).slideToggle(350);
                 });
-                elem.bind('mouseout', function() {
+                elem.on('mouseout', function() {
                     slideSelector.stop(true).slideToggle(350);
                 });
             }

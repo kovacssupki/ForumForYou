@@ -18,6 +18,8 @@ $breakpoints: (
           border-radius: $radius;
 }
 
+@import '_home';
+@import '_articles';
 @import '_footer';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
@@ -27,7 +29,8 @@ body {
 }
 main{
   padding: 50px;
-  background-image: url($images + 'b48.png');
+  background-color: white;
+  // background-image: url($images + 'b48.png');
 }
 .container-fluid.text-center {
   background: url($images +"/header-bg.jpg") center 86% no-repeat;
@@ -100,7 +103,3 @@ menu {
     padding: 20px;
   }
 }
-
-@import '_home';
-@import 'articles';
-@import '_footer';
