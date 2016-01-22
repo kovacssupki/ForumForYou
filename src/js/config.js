@@ -27,7 +27,13 @@ angular
                 })
                 .state('about',{
                     url:'/about',
-                    templateUrl:'views/about.html'
+                    templateUrl:'views/about.html',
+                    controller: 'aboutCtrl'
+                })
+                .state('viewAuthor',{
+                    url:'/about/:id',
+                    templateUrl:'views/view-author.html',
+                    controller: 'viewAuthorCtrl'
                 })
             $urlRouterProvider.otherwise("/");
         }

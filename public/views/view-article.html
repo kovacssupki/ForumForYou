@@ -1,12 +1,13 @@
-<div class="container">
-    <a href="#/articles" class="btn btn-default">Back</a>
-    <br/>
-    <br/>
-    <article class="panel panel-default">
-        <div class="panel-heading">{{ article.title }}</div>
-        <div class="panel-body text-justify">
-            <img src="{{ article.image }}"/>
-            <p>{{ article.content }}</p>
-        </div>
-    </article>
-</div>
+<a href="#/articles" class="btn btn-default">Back</a>
+<br/>
+<br/>
+<article class="panel panel-default">
+    <div class="panel-heading">
+        <p>{{ article.title }}</p>
+        <address>By <a href="{{ article.authorPage }}">{{ article.author }}</a> on <time>{{ article.date }}<time></address>
+    </div>
+    <div class="panel-body text-justify">
+        <img src="{{ article.image }}"/>
+        <p>{{ article.content }}</p>
+    </div>
+</article>

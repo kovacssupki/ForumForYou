@@ -1,16 +1,19 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-8">
-            <article class="panel panel-{{ styles[$index%3] }}" ng-repeat="recentArticle in recentArticles">
-                <div class="panel-heading">{{ recentArticle.title }}</div>
-                <div class="panel-body text-justify">
-                    <span>{{ recentArticle.contentTrimmed }}</span>
-                    <a href="#/articles/{{ recentArticle.id }}" class="text"><small class="text-{{ styles[$index%3] }}">Read More</small></a>
-                </div>
-            </article>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-            <div class="well">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor metus varius elementum venenatis</div>
-        </div>
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <article class="panel panel-{{ styles[$index%3] }}" ng-repeat="recentArticle in recentArticles">
+            <div class="panel-heading">
+                <p>{{ recentArticle.title }}</p>
+                <address>By <a href="/about/Stanca">Stanca Pop</a> on <time>{{ recentArticle.date }}<time></address>
+            </div>
+            <div class="panel-body text-justify">
+                <img src="{{ recentArticle.image }}"/>
+                <span>{{ recentArticle.contentTrimmed }}</span>
+                <a href="#/articles/{{ recentArticle.id }}" class="text"><small class="text-{{ styles[$index%3] }}">Read More</small></a>
+            </div>
+        </article>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="well">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor metus varius elementum venenatis</div>
     </div>
 </div>
+
