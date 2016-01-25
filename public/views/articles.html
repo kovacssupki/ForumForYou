@@ -1,9 +1,13 @@
-    <article class="panel panel-{{ styles[$index%6] }}" ng-repeat="article in articles">
-        <div class="panel-heading">{{ article.title }}</div>
-        <div class="panel-body text-justify">
-            <a href="#/articles/{{ article.id }}">
-                <img src="{{ article.image }}"/>
-                <p>{{ article.contentTrimmed }}</p>
-            </a>
-        </div>
-    </article>
+<<<<<<< HEAD
+<article class="panel panel-{{ styles[$index%6] }}" ng-repeat="article in articles">
+    <div class="panel-heading">
+        <p>{{ article.title }}</p>
+        <address>By <a href="{{ article.authorPage }}">{{ article.author }}</a> on <time>{{ article.date }}<time></address>
+    </div>
+    <div class="panel-body text-justify">
+        <img src="{{ article.image }}"/>
+        <span>{{ article.contentTrimmed }}</span>
+        <a href="#/articles/{{ article.id }}" class="text"><small class="text-{{ styles[$index%6] }}">Read More</small></a>
+    </div>
+</article>
+

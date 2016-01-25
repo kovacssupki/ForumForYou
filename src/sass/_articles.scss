@@ -1,8 +1,28 @@
 article {
-  img {
-    display: block;
-    float: left;
-    width: 200px;
-    height: 165px;
+  .panel-heading {
+    p {
+      font-weight: bold;
+    }
+    address {
+      margin: 0;
+      font-size: 14px;
+      a {
+        color: inherit;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+  .panel-body {
+    img {
+      float: left;
+      width: 200px;
+      height: 165px;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
 }
+
