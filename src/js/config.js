@@ -30,6 +30,10 @@ angular
                     url:'/about',
                     templateUrl:'views/about.html'
                 })
+                .state('admin',{
+                    url:'/admin',
+                    templateUrl:'views/admin.html'
+                })
             $urlRouterProvider.otherwise("/");
         }
     ]);
