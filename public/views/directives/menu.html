@@ -1,5 +1,6 @@
 
 <div class="container-fluid text-center"></div>
+
 <nav class="navbar navbar-default" data-spy="affix" data-offset-top="450">
     <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,11 +30,11 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" data-toggle="modal" data-target="#contactModal">Contact</a></li>
         <li class="dropdown" id="connect" data-drop-down="dropdown-menu">
-          <a href="#" class="dropdown-toggle" aria-expanded="false">Connect <i class="fa fa-caret-down"></i></a>
+          <a href="#" class="dropdown-toggle" >Connect <i class="fa fa-caret-down"></i></a>
           <ul class="dropdown-menu">
             <li><a ui-sref="signup"><i class="fa fa-user-plus fa-lg"></i> Sign up</a></li>
-            <li><a data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in fa-lg" ></i> Log In</a></li>
-            <li role="separator" class="divider"></li>
+            <li><a data-toggle="modal" data-target="#loginModal" ><i class="fa fa-sign-in fa-lg" ></i> Log In</a></li>
+            <li class="divider"></li>
             <li><a href="#"><i class="fa fa-power-off fa-lg"></i> Sign out</a></li>
           </ul>
         </li>
@@ -42,71 +43,5 @@
   </div><!-- end of container -->
 </nav>
 
-<div id="contactModal" class="modal fade">
-  <div class="modal-dialog modal-md">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h2 class="text-center">Contact</h2>
-      </div>
-
-      <div class="modal-body">
-        <form>
-         <div class="form-group">
-           <label for="name"></span>Name</label>
-           <input type="text" class="form-control" id="name" placeholder="Enter your name...">
-         </div>
-
-         <div class="form-group">
-           <label for="email"></span>Email</label>
-           <input type="text" class="form-control" id="email" placeholder="Enter your email...">
-         </div>
-
-         <div class="form-group">
-           <label for="description"></span>Description</label>
-           <textarea type="text" class="form-control" id="description" placeholder="Type here..."></textarea>
-         </div>
-
-         <button type="submit" class="btn btn-default btn-success btn-block"><i class="fa fa-paper-plane fa-lg"></i> Send mail</button>
-       </form>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div> <!-- end of modal-dialog -->
-</div> <!-- end of modal -->
-
-<div id="loginModal" class="modal fade">
-  <div class="modal-dialog modal-md">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h2 class="text-center">Log in</h2>
-      </div>
-
-      <div class="modal-body">
-        <form>
-         <div class="form-group">
-           <label for="username"></span>Username</label>
-           <input type="text" class="form-control" id="username" placeholder="Enter your username...">
-         </div>
-
-         <div class="form-group">
-           <label for="password"></span>Password</label>
-           <input type="password" class="form-control" id="password" placeholder="Enter your password...">
-         </div>
-         <div>
-           <a href="#">Forgot password?</a>
-         </div>
-         <br>
-           <button type="submit" class="btn btn-default btn-success btn-block">Log in</button>
-       </form>
-      </div>
-    </div>
-  </div>
-</div>
-
+<contact-modal></contact-modal>
+<login-modal></login-modal>

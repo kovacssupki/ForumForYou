@@ -15,17 +15,16 @@
     <!-- END MAIN STYLE -->
 </head>
 
-<body ng-app="Blog" data-spy="scroll" data-target=".navbar" data-smooth-scroll="body">
+<body ng-app="Blog" data-spy="scroll" data-target="main">
     <menu></menu>
-    <main class="container">
+    <main class="container" smooth-scroll duration="1000" easing="easeInQuint" >
         <div class="col-md-12">
-            <!--<div class="jumbotron">-->
-                <ui-view></ui-view>
-            <!--</div>-->
+            <ui-view></ui-view>
         </div>
+        <custom-footer></custom-footer>
     </main>
-    <custom-footer></custom-footer>
-    <!-- jQuery library BOOTSTRAP -->
+
+    <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled JavaScript BOOTSTRAP -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -42,12 +41,16 @@
     <script src="../src/js/controllers/aboutCtrl.js"></script>
     <script src="../src/js/controllers/articlesCtrl.js"></script>
     <script src="../src/js/controllers/homeCtrl.js"></script>
+    <script src="../src/js/controllers/signupController.js"></script>
     <script src="../src/js/controllers/viewArticleCtrl.js"></script>
     <script src="../src/js/controllers/viewAuthorCtrl.js"></script>
+    <script src="../src/js/directives/contactModal.js"></script>
     <script src="../src/js/directives/dropdown.js"></script>
     <script src="../src/js/directives/footer.js"></script>
+    <script src="../src/js/directives/loginModal.js"></script>
     <script src="../src/js/directives/menu.js"></script>
     <script src="../src/js/script.js"></script>
+    <script src="../src/js/services/angular-smooth-scroll.js"></script>
     <!-- END APP -->
 
 </body>

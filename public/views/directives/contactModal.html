@@ -1,0 +1,46 @@
+
+
+<div id="contactModal" class="modal fade">
+  <div class="modal-dialog modal-md">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1 class="text-center"><strong>Contact us</strong></h1>
+      </div>
+
+      <div class="modal-body">
+        <form name="contactForm" action="MAILTO:someone@example.com" method="post" enctype="text/plain" novalidate>
+          <!-- NAME -->
+          <div class="form-group" ng-class="{'has-error': contactForm.name.$invalid && contactForm.name.$dirty, 'has-success': contactForm.name.$valid && contactForm.name.$dirty}">
+              <label>Name </label>
+              <input type="text" name="name" class="form-control"
+              ng-model="user.name">
+          </div>
+          <!-- EMAIL -->
+         <div class="form-group" ng-class="{'has-error': contactForm.email.$invalid && contactForm.email.$dirty, 'has-success': contactForm.email.$valid && contactForm.email.$dirty}">
+             <label>Email *</label>
+             <input type="email" name="email" class="form-control"
+             ng-model="user.email"
+             ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"
+             required>
+             <p ng-show="valid(contactForm.email)" class="help-block">Enter a valid email.</p>
+             <p ng-show="required(contactForm.email)" class="help-block">Email is required.</p>
+         </div>
+         <!-- DESCRIPTION -->
+         <div class="form-group">
+           <label for="description"></span>Description</label>
+           <textarea type="text" class="form-control" name="description" placeholder="Type here..." ng-minlength="20" ng-maxlength="25" ng-trim='true'></textarea>
+         </div>
+
+         <button type="submit" class="btn btn-default btn-success btn-block"><i class="fa fa-paper-plane fa-lg"></i> Send mail</button>
+       </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+      </form>
+    </div><!-- end of modal-content -->
+  </div> <!-- end of modal-dialog -->
+</div> <!-- end of modal -->
