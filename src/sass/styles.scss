@@ -17,9 +17,9 @@ $breakpoints: (
        -o-border-radius: $radius;
           border-radius: $radius;
 }
-
 @import '_home';
 @import '_articles';
+@import '_about';
 @import '_footer';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
@@ -91,11 +91,6 @@ menu {
   margin: 0;
   padding: 0;
 }
-
-@import '_home';
-@import '_articles';
-@import '_about';
-@import '_footer';
 
 .signup{
   margin-top: 30px;

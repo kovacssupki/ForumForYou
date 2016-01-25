@@ -1,5 +1,4 @@
 
-
 <div class="modal-dialog modal-lg signup">
     <div class="modal-content">
         <div class="modal-header">
@@ -48,7 +47,19 @@
             <!-- DATE -->
             <div class="form-group">
                 <label>Date </label>
-                <input type="date" id="date" class="form-control" ng-model="user.date">
+                <p class="input-group">
+                  <input type="text" class="form-control"
+                   uib-datepicker-popup
+                   ng-model="datePicker.date"
+                   is-open="datePicker.opened"
+                   close-text="Close"/>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-success" ng-click="datePicker.open()"><i class="fa fa-calendar fa-lg"></i></button>
+                  </span>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-danger" ng-click="datePicker.clear()">Clear</button>
+                  </span>
+                </p>
             </div>
             <p class="text-danger"><strong>*</strong> required fields</p>
             <button type="submit" class="btn btn-info btn-block">Signup</button>
