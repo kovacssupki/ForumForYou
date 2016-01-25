@@ -36,6 +36,11 @@ angular
                     templateUrl:'views/view-author.html',
                     controller: 'viewAuthorCtrl'
                 })
+                .state('admin',{
+                    url:'/admin',
+                    templateUrl:'views/admin.html',
+                    controller:'AdminCtrl'
+                })
             $urlRouterProvider.otherwise("/");
         }
     ]);
