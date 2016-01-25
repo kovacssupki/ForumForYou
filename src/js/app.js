@@ -2,5 +2,9 @@ angular
     .module('Blog', [
         'ui.router',
         'ui.bootstrap',
-        'smoothScroll'
+        // 'ngAnimate',
+        'smoothScroll',
+        'ngSanitize',
+        'ui.select'
+
     ]);

@@ -1,17 +1,94 @@
-<h1 class="text-center padded">Admin</h1><br>
-<h2>Users</h2>
-<table class="table">
-   <tbody>
-      <tr>
-         <th>ID</th>
-         <th>Name</th>
-         <th>Username</th>
-         <th>Email</th>
-      </tr>
-      <tr>
-         <td>{{user.id}}</td>
-         <td>{{user.name}}</td>
-         <td>{{user.email}}</td>
-      </tr>
-   </tbody>
-</table>
+<div class="col-md-12">
+  <div class="jumbotron">
+    <div class="row">
+      <h1 class="text-center padded">Admin</h1>
+      <br>
+      <h2>Users</h2>
+      <table class="table">
+         <tbody>
+            <tr>
+               <th>ID</th>
+               <th>First name</th>
+               <th>Last name</th>
+               <th>Username</th>
+               <th>Email</th>
+            </tr>
+            <tr  ng-repeat="user in users">
+               <td>{{user.id}}</td>
+               <td>{{user.firstName}}</td>
+               <td>{{user.lastName}}</td>
+               <td>{{user.username}}</td>
+               <td>{{user.email}}</td>
+            </tr>
+         </tbody>
+      </table>
+    </div>
+
+    <div class="row">
+      <div class="well">
+
+        <uib-tabset>
+          <uib-tab heading="My Articles">
+            Articles
+          </uib-tab>
+
+          <uib-tab heading="Add article" >
+            <ng-form name="addArticle">
+
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" required />
+              </div>
+
+              <div class="form-group">
+                <label for="body">Body</label>
+                <textarea type="text" class="form-control" name="body" placeholder="Type here..."></textarea>
+              </div>
+
+                <label for="category">Cateogry</label>
+                <ui-select
+                  multiple
+                  tagging
+                  tagging-label="(custom 'new' label)"
+                  ng-model="article.category"
+                  theme="bootstrap"
+                  sortable="true"
+                  ng-disabled="disabled"
+                  title="Choose a category">
+                  <ui-select-match placeholder="Select category...">{{$item}}</ui-select-match>
+                  <ui-select-choices repeat="category in categories">{{category}}</ui-select-choices>
+                </ui-select>
+
+              <div class="form-group">
+                <label>Date </label>
+                <div class="input-group">
+                  <input type="text" class="form-control"
+                   uib-datepicker-popup
+                   ng-model="datePicker.date"
+                   is-open="datePicker.opened"
+                   close-text="Close"/>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-success" ng-click="datePicker.open()"><i class="fa fa-calendar fa-lg"></i></button>
+                  </span>
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-danger" ng-click="datePicker.clear()">Clear</button>
+                  </span>
+                </div>
+              </div>
+
+            </ng-form>
+          </uib-tab>
+
+          <uib-tab heading="Profile">
+            Profile
+          </uib-tab>
+
+          <uib-tab heading="Settings">
+            Settings
+          </uib-tab>
+        </uib-tabset>
+
+      </div> <!-- end of well -->
+    </div> <!-- end of row -->
+  </div> <!-- end of jumbotron -->
+</div> <!-- end of col-md-12 -->

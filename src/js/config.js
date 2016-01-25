@@ -28,11 +28,18 @@ angular
                 })
                 .state('about',{
                     url:'/about',
-                    templateUrl:'views/about.html'
+                    templateUrl:'views/about.html',
+                    controller: 'aboutCtrl'
+                })
+                .state('viewAuthor',{
+                    url:'/about/:id',
+                    templateUrl:'views/view-author.html',
+                    controller: 'viewAuthorCtrl'
                 })
                 .state('admin',{
                     url:'/admin',
-                    templateUrl:'views/admin.html'
+                    templateUrl:'views/admin.html',
+                    controller:'AdminCtrl'
                 })
             $urlRouterProvider.otherwise("/");
         }
