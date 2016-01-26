@@ -1,8 +1,6 @@
-@import '_include-media';
-
+// VARIABLES
 $turquoise:#31A5E7;
 $images: '../assets/images/';
-
 $breakpoints: (
   'phone': 320px,
   'tablet': 768px,
@@ -10,6 +8,7 @@ $breakpoints: (
   'large desktop': 1200px
 ) !default;
 
+// MIXINS
 @mixin border-radius($radius:10px) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -17,108 +16,40 @@ $breakpoints: (
        -o-border-radius: $radius;
           border-radius: $radius;
 }
+
+// IMPORTS
+@import '_include-media';
 @import '_home';
 @import '_articles';
 @import '_author';
 @import '_about';
 @import '_footer';
 @import '_select';
+@import '_navbar';
+@import '_modals';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
-  	//background-image: url($images + 'b50.png');
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
 }
 main{
   padding: 50px;
   background-color: white;
-  // background-image: url($images + 'b48.png');
 }
 textarea {
   resize: vertical;
 }
-menu {
+.addArt{
+  background: url($images +"/header-bg.jpg") center 30% no-repeat;
+  height: 120px;
+  padding-top: 5%;
   margin: 0;
-  padding: 0;
 }
-// uib-tabset{
-//   & uib-tab {
-//     color: red;
-//     &:hover{
-//       cursor: pointer;
-//     }
-//   }
-// }
-// .well{
-//   & uib-tab{
-//     margin-bottom: 100px;
-//   }
-// }
-.container-fluid.text-center {
-  background: url($images +"/header-bg.jpg") center 86% no-repeat;
-  height: 321px;
-}
-
-.affix {
-  top:0;
-  width: 100%;
-  z-index: 9999 !important;
-}
-
-.navbar{
-    &.navbar-default{
-    li {
-      padding-top: 10px;
-      font-size: 18px;
-      a{
-        padding: 10px;
-      }
-    }
-  }
-    .navbar-header{
-      .navbar-brand{
-        font-size: 20px;
-        padding-top: 12px;
-        line-height: 36px;
-      }
-    }
-  }
-.dropdown{
-  .dropdown-menu{
-    li{
-      margin: 0;
-
-      a{
-        padding: 15px;
-        margin: 0;
-      }
-    }
+.tabs{
+  .well{
+    background: url($images +"/b48.png");
   }
 }
-.modal-header{
-  background: url($images +'header-bg.jpg') 77% 68% no-repeat;
-}
-.modal-dialog{
-  margin-top: 200px;
-  .modal-header{
-    background-color: $turquoise;
-  }
-  .modal-body{
-    padding: 50px;
-  }
-}
-.modal-body{
-  padding: 50px;
-}
-.signup{
-  margin-top: 30px;
-}
-.panel-body{
-  & p {
-    padding: 20px;
-    font-size: 25px;
-  }
-  & img{
-    padding: 20px;
-  }
+.users{
+  margin-bottom: 30px;
 }
