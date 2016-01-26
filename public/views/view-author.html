@@ -1,9 +1,16 @@
-<article class="panel panel-default">
-    <div class="panel-heading text-center">
-        <p>{{ author.firstName }} {{ author.lastName }}</p>
+<article class="panel">
+    <div class="panel-heading">
+        <h1>{{ author.firstName }} {{ author.lastName }}</h1>
+        <br>
+        <blockquote>
+            <q>{{ author.quote }}</q>
+            <small>{{ author.quoteAuthor }} in <cite title="Source Title">{{ author.quoteSource }}</cite></small>
+        </blockquote>
     </div>
     <div class="panel-body text-justify">
-        <img src="{{ author.photo }}"/>
-        <p>{{ author.description }}</p>
+        <p class>{{ author.description }}</p>
+        <address>
+            <strong>E-mail: </strong><a href="mailto:{{ author.email }}">{{ author.email }}</a>
+        </address>
     </div>
 </article>

@@ -13,8 +13,4 @@ angular.module('Blog').controller('aboutCtrl', ['$scope', function($scope) {
             id: 'stanca'
         }
     ];
-    $scope.styles = {
-        0 : 'info',
-        1 : 'danger'
-    };
 }]);

@@ -19,13 +19,14 @@ $breakpoints: (
 }
 @import '_home';
 @import '_articles';
+@import '_author';
 @import '_about';
 @import '_footer';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
-  	background-image: url($images + 'b50.png');
+  	//background-image: url($images + 'b50.png');
     font-family: 'Raleway', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 main{
   padding: 50px;
@@ -34,7 +35,7 @@ main{
 }
 .container-fluid.text-center {
   background: url($images +"/header-bg.jpg") center 86% no-repeat;
-  height:450px;
+  height: 321px;
 }
 
 .affix {
@@ -47,7 +48,7 @@ main{
     &.navbar-default{
     li {
       padding-top: 10px;
-      font-size: 20px;
+      font-size: 18px;
       a{
         padding: 10px;
       }
@@ -55,8 +56,9 @@ main{
   }
     .navbar-header{
       .navbar-brand{
-        font-size: 30px;
+        font-size: 20px;
         padding-top: 12px;
+        line-height: 36px;
       }
     }
   }
