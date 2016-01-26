@@ -1,1 +1,22 @@
+article {
+  &.recent-article {
+    border: none;
+    margin-bottom: 80px;
 
+    .panel-heading {
+      background: none;
+      color: inherit;
+    }
+  }
+}
+
+button {
+  &.btn.btn-primary {
+    border-radius: 28px;
+    font-size: 18px;
+    margin: 10px 0 80px;
+  }
+  em {
+    font: 26px "Monotype Corsiva", sans serif;
+  }
+}

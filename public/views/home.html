@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8">
-        <article class="panel panel-{{ styles[$index%3] }}" ng-repeat="recentArticle in recentArticles">
+        <article class="panel panel-{{ styles[$index % styles.length] }} recent-article" ng-repeat="recentArticle in recentArticles">
             <div class="panel-heading">
                 <p>{{ recentArticle.title }}</p>
-                <address>By <a href="/about/Stanca">Stanca Pop</a> on <time>{{ recentArticle.date }}<time></address>
+                <address>By <a href="#about/{{ recentArticle.authorPage }}">{{ recentArticle.author }}</a> on <time>{{ recentArticle.date }}<time></address>
             </div>
             <div class="panel-body text-justify">
                 <img src="{{ recentArticle.image }}"/>
@@ -13,6 +13,16 @@
         </article>
     </div>
     <div class="col-xs-12 col-sm-4">
+        <div class="text-center">
+            <button class="btn btn-primary">
+                <span class="text-uppercase">Subscribe</span>
+                <br>
+                <em>by email</em>
+                <br>
+                <span>Never miss a post!</span>
+            </button>
+        </div>
         <div class="well">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor metus varius elementum venenatis</div>
+
     </div>
 </div>
