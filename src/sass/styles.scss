@@ -21,6 +21,7 @@ $breakpoints: (
 @import '_articles';
 @import '_about';
 @import '_footer';
+@import '_select';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
   	background-image: url($images + 'b50.png');
@@ -32,6 +33,26 @@ main{
   background-color: white;
   // background-image: url($images + 'b48.png');
 }
+textarea {
+  resize: vertical;
+}
+menu {
+  margin: 0;
+  padding: 0;
+}
+// uib-tabset{
+//   & uib-tab {
+//     color: red;
+//     &:hover{
+//       cursor: pointer;
+//     }
+//   }
+// }
+// .well{
+//   & uib-tab{
+//     margin-bottom: 100px;
+//   }
+// }
 .container-fluid.text-center {
   background: url($images +"/header-bg.jpg") center 86% no-repeat;
   height:450px;
@@ -87,11 +108,6 @@ main{
 .modal-body{
   padding: 50px;
 }
-menu {
-  margin: 0;
-  padding: 0;
-}
-
 .signup{
   margin-top: 30px;
 }

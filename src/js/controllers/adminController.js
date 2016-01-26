@@ -1,4 +1,15 @@
-angular.module('Blog').controller('AdminCtrl', ['$scope','DatePicker',function($scope,DatePicker) {
+angular
+.module('Blog')
+.controller('AdminCtrl', [
+  '$scope',
+  'DatePicker',
+  function($scope,DatePicker) {
+
+    $scope.required = function(form){
+       if(form.$error.required && form.$dirty){
+          return true;
+       }
+    };
     $scope.datePicker = DatePicker;
     $scope.users = [
         {
