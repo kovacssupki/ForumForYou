@@ -4,7 +4,6 @@ angular
   '$scope',
   '$stateParams',
   function($scope, $stateParams) {
-    
     $scope.articles = {
         6: {
             title: 'Fun facts!',
