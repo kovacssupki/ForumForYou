@@ -4,7 +4,7 @@
         <address>By <a href="#about/{{ article.authorPage }}">{{ article.author }}</a> on <time>{{ article.date }}<time></address>
     </div>
     <div class="panel-body text-justify">
-        <img src="{{ article.image }}"/>
+        <img data-ng-src="{{article.image}}"/>
         <span>{{ article.contentTrimmed }}</span>
         <a href="#/articles/{{ article.id }}" class="text"><small class="text-{{ styles[$index%6] }}">Read More</small></a>
     </div>
