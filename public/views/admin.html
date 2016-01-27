@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <div class="jumbotron">
-    <div class="row">
+    <div class="row users">
       <h1 class="text-center padded">Admin</h1>
       <br>
       <h2>Users</h2>
@@ -24,71 +24,95 @@
       </table>
     </div>
 
-    <div class="row">
-      <div class="well">
+    <div class="row tabs">
 
-        <uib-tabset>
+        <uib-tabset justified="true">
           <uib-tab heading="My Articles">
-            Articles
+            <div class="well">
+              Articles
+            </div>
           </uib-tab>
 
           <uib-tab heading="Add article" >
-            <ng-form name="addArticle">
-
-              <div class="form-group">
+            <div class="well">
+            <form name="addArticle" novalidate>
+              <h2 class="text-center addArt">Add article</h2>
+              <div class="form-group" ng-class="{'has-error': addArticle.title.$invalid && addArticle.title.$dirty, 'has-success': addArticle.title.$valid && addArticle.title.$dirty}">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" required />
+                <input
+                type="text"
+                class="form-control"
+                name="title"
+                ng-model="addArt.article.title"
+                placeholder="Enter title..."
+                required
+                autofocus />
+                <p ng-show="validate.required(addArticle.title)" class="help-block">Title is required.</p>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" ng-class="{'has-error': addArticle.author.$invalid && addArticle.author.$dirty, 'has-success': addArticle.author.$valid && addArticle.author.$dirty}">
+                <label for="author">Author</label>
+                <input
+                type="text"
+                class="form-control"
+                name="author"
+                ng-model="addArt.article.author"
+                placeholder="Enter author..."
+                required
+                autofocus />
+                <p ng-show="validate.required(addArticle.author)" class="help-block">Author is required.</p>
+              </div>
+
+              <div class="form-group" ng-class="{'has-error': addArticle.body.$invalid && addArticle.body.$dirty, 'has-success': addArticle.body.$valid && addArticle.body.$dirty}">
                 <label for="body">Body</label>
-                <textarea type="text" class="form-control" name="body" placeholder="Type here..."></textarea>
+                <textarea
+                type="text"
+                class="form-control"
+                name="body"
+                ng-model="addArt.article.body"
+                placeholder="Type here..."
+                rows="15"
+                required>
+                </textarea>
+                <p ng-show="validate.required(addArticle.body)" class="help-block">Body is required.</p>
               </div>
-
-                <label for="category">Category</label>
+              <div class="form-group">
+                  <label for="category">Category</label>
                 <ui-select
                   multiple
                   tagging
                   tagging-label="(custom 'new' label)"
-                  ng-model="article.category"
+                  ng-model="addArt.article.category"
                   theme="bootstrap"
                   sortable="true"
                   ng-disabled="disabled"
-                  title="Choose a category">
+                  title="Choose a category"
+                  class="form-control">
                   <ui-select-match placeholder="Select category...">{{$item}}</ui-select-match>
-                  <ui-select-choices repeat="category in categories">{{category}}</ui-select-choices>
+                  <ui-select-choices repeat="category in addArt.categories">{{category}}</ui-select-choices>
                 </ui-select>
-
-              <div class="form-group">
-                <label>Date </label>
-                <div class="input-group">
-                  <input type="text" class="form-control"
-                   uib-datepicker-popup
-                   ng-model="datePicker.date"
-                   is-open="datePicker.opened"
-                   close-text="Close"/>
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-success" ng-click="datePicker.open()"><i class="fa fa-calendar fa-lg"></i></button>
-                  </span>
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-danger" ng-click="datePicker.clear()">Clear</button>
-                  </span>
-                </div>
               </div>
 
-            </ng-form>
+              <date-picker></date-picker>
+              <button type="submit" class="btn btn-primary btn-block">Add</button>
+
+            </form>
+          </div> <!-- end of well -->
           </uib-tab>
 
           <uib-tab heading="Profile">
-            Profile
+            <div class="well">
+              Profile
+            </div>
           </uib-tab>
 
           <uib-tab heading="Settings">
-            Settings
+            <div class="well">
+              Settings
+            </div>
           </uib-tab>
         </uib-tabset>
 
-      </div> <!-- end of well -->
     </div> <!-- end of row -->
   </div> <!-- end of jumbotron -->
 </div> <!-- end of col-md-12 -->

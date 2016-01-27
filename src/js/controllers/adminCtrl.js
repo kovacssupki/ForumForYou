@@ -1,5 +1,16 @@
-angular.module('Blog').controller('AdminCtrl', ['$scope','DatePicker',function($scope,DatePicker) {
+angular
+.module('Blog')
+.controller('AdminCtrl', [
+  '$scope',
+  'DatePicker',
+  'Validate',
+  'AddArticle',
+  function($scope,DatePicker,Validate,AddArticle) {
+
+    $scope.validate = Validate;
+    $scope.addArt = AddArticle;
     $scope.datePicker = DatePicker;
+  
     $scope.users = [
         {
             id: 1,
@@ -25,21 +36,4 @@ angular.module('Blog').controller('AdminCtrl', ['$scope','DatePicker',function($
         }
     ];
 
-    $scope.article = {
-      title: 'Animals',
-      body: 'Lorem Lorem Lorem ',
-      category: ['Nature','Science'],
-      date: '25.01.2016'
-    };
-
-    $scope.categories = [
-      'Nature',
-      'Science',
-      'Health',
-      'Wildlife',
-      'Food',
-      'History',
-      'Technology',
-      'Music'
-    ]
 }]);
