@@ -3,21 +3,24 @@
       <h1 class="text-center padded">Admin</h1>
       <br>
       <h2>Users</h2>
-      <table class="table">
+      <table class="table table-bordered">
          <tbody>
             <tr>
-               <th>ID</th>
                <th>First name</th>
                <th>Last name</th>
                <th>Username</th>
                <th>Email</th>
+               <th>Motto</th>
             </tr>
             <tr  ng-repeat="user in users">
-               <td>{{user.id}}</td>
                <td>{{user.firstName}}</td>
                <td>{{user.lastName}}</td>
                <td>{{user.username}}</td>
                <td>{{user.email}}</td>
+               <td>
+                     <q>{{ user.quote }}</q>
+                     <small>{{ user.quoteAuthor }} in <cite title="Source Title">{{ user.quoteSource }}</cite></small>
+               </td>
             </tr>
          </tbody>
       </table>
@@ -28,14 +31,18 @@
         <uib-tabset justified="true" >
           <uib-tab heading="My Articles" class="text-center">
             <div class="well">
-              Articles
+              <h1 class="text-center">My Articles</h1>
+              <br>
+              <article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|orderBy:'-id'|filter:{author:'Stefan Chira'}">
+                <article-body></article-body>
+              </article>
             </div>
           </uib-tab>
 
           <uib-tab heading="Add article"  class="text-center">
             <div class="well">
-            <form name="addArticle" novalidate>
-              <h2 class="text-center addArt">Add article</h2>
+              <h1 class="text-center">Add article</h1>
+              <form name="addArticle" novalidate>
               <div class="form-group" ng-class="{'has-error': addArticle.title.$invalid && addArticle.title.$dirty, 'has-success': addArticle.title.$valid && addArticle.title.$dirty}">
                 <label for="title">Title</label>
                 <input
@@ -95,20 +102,57 @@
 
               <date-picker></date-picker>
               <button type="submit" class="btn btn-primary btn-block">Add</button>
-
-            </form>
-          </div> <!-- end of well -->
+              </form>
+            </div> <!-- end of well -->
           </uib-tab>
 
           <uib-tab heading="Profile"  class="text-center">
-            <div class="well">
-              Profile
+            <div class="well profile">
+              <h1 class="text-center">Profile</h1>
+              <br>
+              <div class="form-inline">
+                <label class="col-md-3">First Name: </label>
+                <span ng-show="display"> {{users.stefan.firstName}}</span>
+                <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.firstName">
+              </div>
+              <div class="form-inline">
+                <label class="col-md-3">Last Name: </label>
+                <span ng-show="display"> {{users.stefan.lastName}}</span>
+                <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.lastName">
+              </div>
+
+              <div class="form-inline">
+                <label class="col-md-3">Username: </label>
+                <span ng-show="display"> {{users.stefan.username}}</span>
+                <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.username">
+              </div>
+
+              <div class="form-inline">
+                <label class="col-md-3">Email: </label>
+                <span ng-show="display"> {{users.stefan.email}}</span>
+                <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.email">
+              </div>
+
+              <div class="form-inline">
+                <label class="col-md-3">Description: </label>
+                <span ng-show="display"> {{users.stefan.description}}</span>
+                <textarea ng-hide="display" type="text" class="form-control" ng-model="users.stefan.description"></textarea>
+              </div>
+
+              <div class="form-inline">
+                <label class="col-md-3">Quote: </label>
+                <span ng-show="display"> {{users.stefan.quote}}</span>
+                <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.quote">
+              </div>
+
+              <button class="btn btn-success btn-block btn-lg" ng-show="display" ng-click="edit()">Edit</button>
+              <button class="btn btn-info btn-block  btn-lg" ng-hide="display" ng-click="save()">Save</button>
             </div>
           </uib-tab>
 
           <uib-tab heading="Settings"  class="text-center">
             <div class="well">
-              Settings
+              <h1 class="text-center">Settings</h1>
             </div>
           </uib-tab>
         </uib-tabset>
