@@ -1,6 +1,6 @@
 angular
   .module('Blog')
-  .controller(['AdminCtrl', '$scope','DatePicker','Validate','AddArticle',
+  .controller('AdminCtrl', ['$scope','DatePicker','Validate','AddArticle',
   function($scope,DatePicker,Validate,AddArticle) {
 
       $scope.validate = Validate;

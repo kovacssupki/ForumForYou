@@ -32,6 +32,14 @@ em {
   }
 }
 
+button {
+  &.btn.btn-primary {
+    border-radius:28px;
+    font-size: 18px;
+    margin: 10px 0 80px;
+  }
+}
+
 .well {
   font-size: smaller;
   p.text-right {
