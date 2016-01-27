@@ -46,6 +46,14 @@ textarea {
   margin: 0;
 }
 
+.tabs{
+  .well{
+    padding: 50px;
+    .form-group{
+      margin: 25px 5px;
+    }
+  }
+}
 
 article {
   .panel-body {

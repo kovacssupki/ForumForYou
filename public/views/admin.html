@@ -1,5 +1,4 @@
 <div class="col-md-12">
-  <div class="jumbotron">
     <div class="row users">
       <h1 class="text-center padded">Admin</h1>
       <br>
@@ -26,14 +25,14 @@
 
     <div class="row tabs">
 
-        <uib-tabset justified="true">
-          <uib-tab heading="My Articles">
+        <uib-tabset justified="true" >
+          <uib-tab heading="My Articles" class="text-center">
             <div class="well">
               Articles
             </div>
           </uib-tab>
 
-          <uib-tab heading="Add article" >
+          <uib-tab heading="Add article"  class="text-center">
             <div class="well">
             <form name="addArticle" novalidate>
               <h2 class="text-center addArt">Add article</h2>
@@ -76,6 +75,7 @@
                 </textarea>
                 <p ng-show="validate.required(addArticle.body)" class="help-block">Body is required.</p>
               </div>
+
               <div class="form-group">
                   <label for="category">Category</label>
                 <ui-select
@@ -100,13 +100,13 @@
           </div> <!-- end of well -->
           </uib-tab>
 
-          <uib-tab heading="Profile">
+          <uib-tab heading="Profile"  class="text-center">
             <div class="well">
               Profile
             </div>
           </uib-tab>
 
-          <uib-tab heading="Settings">
+          <uib-tab heading="Settings"  class="text-center">
             <div class="well">
               Settings
             </div>
@@ -114,5 +114,4 @@
         </uib-tabset>
 
     </div> <!-- end of row -->
-  </div> <!-- end of jumbotron -->
 </div> <!-- end of col-md-12 -->
