@@ -16,6 +16,11 @@ angular
                     templateUrl:'views/articles.html',
                     controller: 'articlesCtrl'
                 })
+                .state('viewCategory',{
+                    url: '/articles/category/:category',
+                    templateUrl:'views/view-category.html',
+                    controller: 'viewCategoryCtrl'
+                })
                 .state('viewArticle', {
                     url: '/articles/:id',
                     templateUrl: 'views/view-article.html',
