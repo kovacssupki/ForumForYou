@@ -45,11 +45,42 @@ textarea {
   padding-top: 5%;
   margin: 0;
 }
-.tabs{
-  .well{
-    background: url($images +"/b48.png");
+
+
+article {
+  .panel-body {
+    padding: 20px 10px 0;
+    & p {
+      font-size: 20px;
+    }
+    & img {
+      padding: 20px;
+    }
+  }
+  .panel-footer {
+    background-color: white;
+    line-height: 10px;
+    border-style: none;
+
+    p.tags {
+      font-size: 13px;
+      padding-left: 195px;
+
+      a {
+        color: inherit;
+      }
+    }
   }
 }
-.users{
+
+.users {
   margin-bottom: 30px;
+}
+
+button.btn-default {
+  &.btn-sm {
+    background-color: white;
+    border-width: 1px;
+    color: black;
+    }
 }

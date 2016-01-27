@@ -10,13 +10,45 @@ article {
   }
 }
 
+em {
+  font: 21px "Monotype Corsiva", sans serif;
+}
+
+.subscribe {
+  border-radius: 28px;
+  font-size: 18px;
+  margin: 15px auto 40px;
+  background-color: #2c3e50;
+  color: white;
+  height: 100px;
+  width: 255px;
+  line-height: 32px;
+
+  input {
+    font-size: 14px;
+    color: black;
+    height: 32px;
+    width: 200px;
+
+  }
+}
+
 button {
   &.btn.btn-primary {
     border-radius:28px;
     font-size: 18px;
     margin: 10px 0 80px;
   }
-  em {
-    font: 26px "Monotype Corsiva", sans serif;
+}
+
+.well {
+  font-size: smaller;
+  p.text-right {
+    small {
+      display: block;
+      margin-top: 14px;
+    }
   }
 }
+
+
