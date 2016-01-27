@@ -7,11 +7,17 @@ article {
       background: none;
       color: inherit;
     }
+
+    .panel-footer {
+      border-top: 1px solid;
+      line-height: 15px;
+      overflow: hidden;
+    }
   }
 }
 
 em {
-  font: 21px "Monotype Corsiva", sans serif;
+  font: 21px "Monotype Corsiva";
 }
 
 .subscribe {
@@ -24,28 +30,35 @@ em {
   width: 255px;
   line-height: 32px;
 
+  .form-group {
+    margin: 0;
+    padding-right: 0;
+  }
+
   input {
     font-size: 14px;
-    color: black;
     height: 32px;
-    width: 200px;
   }
 }
 
 button {
   &.btn.btn-primary {
-    border-radius:28px;
-    font-size: 18px;
-    margin: 10px 0 80px;
+    padding: 5px 5px 5px 0;
   }
 }
 
 .well {
+  margin: 60px 0;
   font-size: smaller;
   p.text-right {
     small {
       display: block;
       margin-top: 14px;
     }
+  }
+  ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
   }
 }
