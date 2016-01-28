@@ -35,4 +35,5 @@ angular
           }
       ];
       $scope.styles = ['default', 'danger', 'info'];
+      $scope.categories = ['nature', 'wildlife', 'science', 'technology', 'health', 'food', 'history', 'music']
 }]);
