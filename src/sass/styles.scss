@@ -32,18 +32,42 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
 }
+
 main{
   padding: 50px;
   background-color: white;
 }
+
 textarea {
   resize: vertical;
 }
-.addArt{
-  background: url($images +"/header-bg.jpg") center 30% no-repeat;
-  height: 120px;
-  padding-top: 5%;
-  margin: 0;
+
+table{
+  tr{
+    th{
+      min-width: 100px;
+      text-align: center;
+    }
+  }
+}
+
+.profile{
+  .form-inline{
+    margin: 20px;
+    font-size: 20px;
+    input,textarea{
+      font-size: 20px;
+    }
+  }
+}
+
+.well{
+  h1.text-center{
+    background: url($images +"/header-bg.jpg") center 48% no-repeat;
+    height: 120px;
+    padding-top: 4%;
+    margin: 0;
+  }
 }
 
 .tabs{
@@ -53,6 +77,10 @@ textarea {
       margin: 25px 5px;
     }
   }
+}
+
+.users {
+  margin-bottom: 30px;
 }
 
 article {
@@ -79,10 +107,6 @@ article {
       }
     }
   }
-}
-
-.users {
-  margin-bottom: 30px;
 }
 
 button.btn-default {
