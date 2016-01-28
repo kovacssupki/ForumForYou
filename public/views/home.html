@@ -1,4 +1,40 @@
 <div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <article class="panel panel-{{ styles[$index % styles.length] }} recent-article" ng-repeat="article in art.articles|filter:search|orderBy:'-id'|limitTo:3">
+            <article-body></article-body>
+        </article>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="subscribe text-center">
+            <span class="text-uppercase">Subscribe</span>
+            <em>by email</em>
+            <div class="form-inline">
+                <div class="form-group col-xs-10">
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <button type="submit" class="btn btn-primary col-xs-2">OK</button>
+            </div>
+            <span>Never miss a post!</span>
+        </div>
+        <div class="well text-justify">
+            <q><em>Whatever you can do, or dream you can, begin it.  Boldness has genius, power and magic in it.</em></q>
+            <p class="text-right"><small>Johann Wolfgang von Goethe</small></p>
+        </div>
+        <div class="well">
+            <h4 class="text-center"><strong>Blog Categories</strong></h4>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-unstyled">
+                        <li ng-repeat="category in art.categories"><a href="#/articles/category/{{ category }}">{{ category }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
   <div class="col-xs-12 col-sm-8">
     <article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|filter:search|orderBy:'-id'|limitTo:3">
       <article-body></article-body>
@@ -49,4 +85,4 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->

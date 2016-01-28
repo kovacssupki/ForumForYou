@@ -5,6 +5,6 @@ angular
   .directive('articleBody', function() {
     return {
        restrict: 'E',
-       templateUrl:'views/directives/article.html'
+       templateUrl:'views/directives/articleBody.html'
     };
 });
