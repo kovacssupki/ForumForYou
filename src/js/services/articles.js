@@ -64,6 +64,7 @@ angular
             id: 1
           }
         ],
-        styles: ['default', 'danger', 'info', 'warning', 'success','primary']
+        styles: ['default', 'danger', 'info', 'warning', 'success','primary'],
+        categories = ['nature', 'wildlife', 'science', 'technology', 'health', 'food', 'history', 'music']
       }
 });

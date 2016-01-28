@@ -1,3 +1,7 @@
-<ul>
-    <li ng-repeat="article in category"><a href="#/articles/{{ article.id }}">{{ article.title }}</a></li>
-</ul>
+
+<div class="list-group" ng-repeat="article in category">
+    <a href="#/articles/{{ article.id }}" class="list-group-item">
+        <h4 class="list-group-item-heading">{{ article.title }}</h4>
+        <p class="list-group-item-text"><small>By {{ article.author }} on {{ article.date }}</small></p>
+    </a>
+</div>
