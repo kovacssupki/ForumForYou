@@ -1,11 +1,10 @@
 angular
   .module('Blog')
-  .controller('AdminCtrl', ['$scope','DatePicker','Validate','AddArticle','Articles','Users',
-  function($scope,DatePicker,Validate,AddArticle,Articles,Users) {
+  .controller('AdminCtrl', ['$scope','DatePicker','Validate','Articles','Users',
+  function($scope,DatePicker,Validate,Articles,Users) {
 
       $scope.datePicker = DatePicker;
       $scope.validate = Validate;
-      $scope.addArt = AddArticle;
       $scope.art = Articles;
       $scope.users = Users;
 

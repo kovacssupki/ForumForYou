@@ -64,7 +64,17 @@ angular
             id: 1
           }
         ],
+        newArticle: {
+          title: 'Breaking news about Facebook!',
+          author: 'Stefan Chira',
+          authorPage: 'stefan',
+          date: '28/01/2016',
+          image: 'assets/images/article-facebook.png',
+          contentTrimmed: 'Fusce sed consectetur odio. Sed at metus ac nibh laoreet aliquet iaculis a justo. Aenean faucibus, arcu sed consequat consectetur, risus ligula consectetur diam, et bibendum justo justo ut quam. Etiam vitae finibus lacus. Duis ultrices porttitor magna, a gravida tellus scelerisque quis. Nullam consectetur sed nisi et efficitur. Suspendisse volutpat aliquam magna vel mollis. Sed auctor eu mauris...',
+          categories: ['Technology','Science'],
+          id: 1
+        },
         styles: ['default', 'danger', 'info', 'warning', 'success','primary'],
-        categories: ['nature', 'wildlife', 'science', 'technology', 'health', 'food', 'history', 'music']
+        categories: ['Nature','Science','Health','Wildlife','Food','History','Technology','Music']
       }
 });
