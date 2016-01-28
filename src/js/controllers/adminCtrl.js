@@ -2,7 +2,8 @@ angular
   .module('Blog')
   .controller('AdminCtrl', ['$scope','DatePicker','Validate','Articles','Users',
   function($scope,DatePicker,Validate,Articles,Users) {
-
+      $scope.search = {};
+      $scope.by = '$';
       $scope.datePicker = DatePicker;
       $scope.validate = Validate;
       $scope.art = Articles;

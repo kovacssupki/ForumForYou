@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12 admin">
     <div class="row users">
       <h1 class="text-center padded">Admin</h1>
       <br>
@@ -25,10 +25,9 @@
          </tbody>
       </table>
     </div>
-
     <div class="row tabs">
 
-        <uib-tabset justified="true" >
+        <uib-tabset justified="true">
           <uib-tab heading="My Articles" class="text-center">
             <div class="well">
               <h1 class="text-center">My Articles</h1>
@@ -109,9 +108,11 @@
           <uib-tab heading="Profile"  class="text-center">
             <div class="well col-md-12 profile">
               <h1 class="text-center">Profile</h1>
+
               <div class="col-md-4">
                 <img ng-src="{{users.stefan.photo}}" alt="{{users.stefan.id}}" width="100%"/>
-                <input value="Choose photo" type="file" class="btn btn-success btn-block btn-lg" ng-hide="display" ng-click="edit()">
+                <h3 class="text-center" ng-hide="display" ng-click="edit()">Change profile picture</h3>
+                  <input type="file" name="photo" ng-hide="display" ng-click="edit()">
                 <button class="btn btn-success btn-block btn-lg" ng-show="display" ng-click="edit()">Edit</button>
                 <button class="btn btn-info btn-block  btn-lg" ng-hide="display" ng-click="save()">Save</button>
               </div>
@@ -157,10 +158,40 @@
             </div><!-- end of well-->
           </uib-tab>
 
-          <uib-tab heading="Settings"  class="text-center">
-            <div class="well">
-              <h1 class="text-center">Settings</h1>
+          <uib-tab heading="Messages"  class="text-center">
+            <div class="well messages">
+              <h1 class="text-center">Messages</h1>
+
+              <div class="form-inline">
+                <input ng-model="search[by]" class="form-control pull-left" type="text" placeholder="Search message...">
+              </div>
+
+              <div class="form-inline">
+                <label>Order by: </label>
+                <select ng-model="by" class="form-control">
+                   <option value="$"></option>
+                   <option value="date">Date</option>
+                   <option value="from">From</option>
+                   <option value="body">Body</option>
+                </select>
+              </div>
+
+              <ul>
+                <li class="list-unstyled" ng-repeat="message in users.stefan.messages|orderBy:by|filter:search">
+                  <blockquote >
+                    {{message.body}}
+                    <br>
+                    <p class="text-warning pull-right">{{message.date}}</p>
+                    <p class="pull-left">From: <a href="#">{{message.from}}</a></p>
+                  </blockquote>
+                </li>
+              </ul>
             </div>
+          </uib-tab>
+
+          <uib-tab heading="Settings"  class="text-center">
+            <div class="well settings">
+              <h1 class="text-center">Settings</h1>
           </uib-tab>
         </uib-tabset>
 

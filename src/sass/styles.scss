@@ -27,6 +27,7 @@ $breakpoints: (
 @import '_select';
 @import '_navbar';
 @import '_modals';
+@import '_admin';
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 body {
     font-family: 'Raleway', sans-serif;
@@ -45,57 +46,10 @@ textarea {
 table{
   tr{
     th{
-      min-width: 80px;
       text-align: center;
     }
   }
 }
-.row{
-  &.tabs{
-
-  }
-}
-.profile{
-    .form-inline{
-      margin: 30px 20px;
-      font-size: 20px;
-      input,textarea{
-        font-size: 20px;
-      }
-    }
-}
-  .col-md-4{
-    img{
-      margin: 30px 10px;
-    }
-    button,input{
-      margin: 20px 10px;
-    }
-  }
-
-
-.well{
-  h1.text-center{
-    background: url($images +"/header-bg.jpg") center 48% no-repeat;
-    height: 120px;
-    padding-top: 4%;
-    margin: 0;
-  }
-}
-
-.tabs{
-  .well{
-    padding: 50px;
-    .form-group{
-      margin: 25px 5px;
-    }
-  }
-}
-
-.users {
-  margin-bottom: 30px;
-}
-
 article {
   .panel-body {
     padding: 20px 10px 0;

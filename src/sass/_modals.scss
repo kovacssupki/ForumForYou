@@ -1,13 +1,10 @@
-.modal-header{
-  background: url($images +'header-bg.jpg') 77% 68% no-repeat;
-}
 .modal-dialog{
-  margin-top: 200px;
+  margin-top: 8%;
   &.signup{
-    margin-top: 20px;
+    margin-top: 10px;
   }
   .modal-header{
-    background-color: $turquoise;
+    background: url($images +'header-bg.jpg') 77% 68% no-repeat;
   }
   .modal-body{
     padding: 20px 50px;
