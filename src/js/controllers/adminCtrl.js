@@ -1,34 +1,19 @@
 angular
   .module('Blog')
-  .controller('AdminCtrl', ['$scope','DatePicker','Validate','AddArticle',
-  function($scope,DatePicker,Validate,AddArticle) {
+  .controller('AdminCtrl', ['$scope','DatePicker','Validate','AddArticle','Articles','Users',
+  function($scope,DatePicker,Validate,AddArticle,Articles,Users) {
 
+      $scope.datePicker = DatePicker;
       $scope.validate = Validate;
       $scope.addArt = AddArticle;
-      $scope.datePicker = DatePicker;
+      $scope.art = Articles;
+      $scope.users = Users;
 
-      $scope.users = [
-          {
-              id: 1,
-              firstName: 'Stefan',
-              lastName: 'Chira',
-              username: 'stefan.chira',
-              email: 'stefan.chira@yahoo.com'
-
-          },
-          {
-              id: 2,
-              firstName: 'Stanca',
-              lastName: 'Pop',
-              username: 'stanca.pop',
-              email: 'stanca.pop@yahoo.com'
-          },
-          {
-              id: 3,
-              firstName: 'Some',
-              lastName: 'Name',
-              username: 'some.name',
-              email: 'some.name@yahoo.com'
-          }
-      ];
+      $scope.display = true;
+      $scope.edit = function(){
+        $scope.display = false;
+      }
+      $scope.save = function(){
+        $scope.display = true;
+      }
 }]);
