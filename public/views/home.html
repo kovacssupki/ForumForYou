@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8">
-    <article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|orderBy:'-id'|limitTo:3">
+    <article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|filter:search|orderBy:'-id'|limitTo:3">
       <article-body></article-body>
     </article>
   </div>
-  
+
   <div class="col-xs-12 col-sm-4">
       <div class="subscribe text-center">
           <span class="text-uppercase">Subscribe</span>

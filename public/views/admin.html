@@ -33,7 +33,7 @@
             <div class="well">
               <h1 class="text-center">My Articles</h1>
               <br>
-              <article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|orderBy:'-id'|filter:{author:'Stefan Chira'}">
+              <article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|filter:search|orderBy:'-id'|filter:{author:'Stefan Chira'}">
                 <article-body></article-body>
               </article>
             </div>
