@@ -65,6 +65,6 @@ angular
           }
         ],
         styles: ['default', 'danger', 'info', 'warning', 'success','primary'],
-        categories = ['nature', 'wildlife', 'science', 'technology', 'health', 'food', 'history', 'music']
+        categories: ['nature', 'wildlife', 'science', 'technology', 'health', 'food', 'history', 'music']
       }
 });
