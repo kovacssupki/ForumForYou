@@ -1,4 +1,1 @@
-
-<article class="panel panel-{{ art.styles[$index % art.styles.length] }}" ng-repeat="article in art.articles|filter:search|orderBy:'-id'">
-  <article-body></article-body>
-</article>
+<article-body  ng-repeat="article in art.articles|filter:search|orderBy:'-id'"></article-body>
