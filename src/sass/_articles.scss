@@ -43,3 +43,23 @@ article {
   }
 }
 
+ul.pagination {
+  display: block;
+  height: 50px;
+  li:first-child {
+    a {
+      border-radius: 25px;
+    }
+  }
+  li:last-child {
+    a {
+      border-radius: 25px;
+    }
+  }
+  a {
+    width: 180px;
+    &.disable {
+      pointer-events: none;
+    }
+  }
+}

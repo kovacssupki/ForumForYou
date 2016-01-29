@@ -1,17 +1,29 @@
+<ul class="pagination">
+    <li class="pull-left text-center">
+        <a data-ng-href="#/articles/{{article.id - 1}}" aria-label="Previous" data-ng-class="{'disable': checkDisableLeft(article.id)}">
+            <span aria-hidden="true">&laquo; Previous article</span>
+        </a>
+    </li>
+    <li class="pull-right text-center">
+        <a data-ng-href="#/articles/{{article.id + 1}}" aria-label="Next" data-ng-class="{'disable': checkDisableRight(article.id)}">
+            <span aria-hidden="true">Next article &raquo;</span>
+        </a>
+    </li>
+</ul>
 <article class="panel panel-default">
     <div class="panel-heading">
         <p>{{ article.title }}</p>
-        <address>By <a href="{{ article.authorPage }}">{{ article.author }}</a> on <time>{{ article.date }}</time></address>
+        <address>By <a data-ng-href="{{ article.authorPage }}">{{ article.author }}</a> on <time>{{ article.date }}</time></address>
     </div>
     <div class="panel-body text-justify">
-        <img src="{{ article.image }}"/>
+        <img data-ng-src="{{ article.image }}"/>
         <p>{{ article.content }}</p>
     </div>
 </article>
 <form>
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Jane Doe" required autofocus>
+        <input type="text" class="form-control" id="name" placeholder="Jane Doe" required>
     </div>
     <div class="form-group">
         <label for="email">Email address</label>
