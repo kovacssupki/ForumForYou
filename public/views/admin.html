@@ -110,7 +110,7 @@
               <h1 class="text-center">Profile</h1>
 
               <div class="col-md-4">
-                <img ng-src="{{users.stefan.photo}}" alt="{{users.stefan.id}}" width="100%"/>
+                <img ng-src="{{users[0].photo}}" alt="{{users[0].id}}" width="100%"/>
                 <h3 class="text-center" ng-hide="display" ng-click="edit()">Change profile picture</h3>
                   <input type="file" name="photo" ng-hide="display" ng-click="edit()">
                 <button class="btn btn-success btn-block btn-lg" ng-show="display" ng-click="edit()">Edit</button>
@@ -120,38 +120,38 @@
               <div class="col-md-8">
                 <div class="form-inline">
                   <label class="col-md-3">First Name: </label>
-                  <span ng-show="display"> {{users.stefan.firstName}}</span>
-                  <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.firstName">
+                  <span ng-show="display"> {{users[0].firstName}}</span>
+                  <input ng-hide="display" type="text" class="form-control" ng-model="users[0].firstName" ng-keyup="add($event)">
                 </div>
 
                 <div class="form-inline">
                   <label class="col-md-3">Last Name: </label>
-                  <span ng-show="display"> {{users.stefan.lastName}}</span>
-                  <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.lastName">
+                  <span ng-show="display"> {{users[0].lastName}}</span>
+                  <input ng-hide="display" type="text" class="form-control" ng-model="users[0].lastName">
                 </div>
 
                 <div class="form-inline">
                   <label class="col-md-3">Username: </label>
-                  <span ng-show="display"> {{users.stefan.username}}</span>
-                  <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.username">
+                  <span ng-show="display"> {{users[0].username}}</span>
+                  <input ng-hide="display" type="text" class="form-control" ng-model="users[0].username">
                 </div>
 
                 <div class="form-inline">
                   <label class="col-md-3">Email: </label>
-                  <span ng-show="display"> {{users.stefan.email}}</span>
-                  <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.email">
+                  <span ng-show="display"> {{users[0].email}}</span>
+                  <input ng-hide="display" type="text" class="form-control" ng-model="users[0].email">
                 </div>
 
                 <div class="form-inline">
                   <label class="col-md-3">Description: </label>
-                  <span ng-show="display"> {{users.stefan.description}}</span>
-                  <textarea ng-hide="display" type="text" class="form-control" ng-model="users.stefan.description"></textarea>
+                  <span ng-show="display"> {{users[0].description}}</span>
+                  <textarea ng-hide="display" type="text" class="form-control" ng-model="users[0].description"></textarea>
                 </div>
 
                 <div class="form-inline">
                   <label class="col-md-3">Quote: </label>
-                  <span ng-show="display"> {{users.stefan.quote}}</span>
-                  <input ng-hide="display" type="text" class="form-control" ng-model="users.stefan.quote">
+                  <span ng-show="display"> {{users[0].quote}}</span>
+                  <input ng-hide="display" type="text" class="form-control" ng-model="users[0].quote">
                 </div>
 
               </div> <!-- end of col-md-8-->
@@ -177,7 +177,7 @@
               </div>
 
               <ul>
-                <li class="list-unstyled" ng-repeat="message in users.stefan.messages|orderBy:by|filter:search">
+                <li class="list-unstyled" ng-repeat="message in users[0].messages|orderBy:by|filter:search">
                   <blockquote >
                     {{message.body}}
                     <br>
@@ -189,10 +189,6 @@
             </div>
           </uib-tab>
 
-          <uib-tab heading="Settings"  class="text-center">
-            <div class="well settings">
-              <h1 class="text-center">Settings</h1>
-          </uib-tab>
         </uib-tabset>
 
     </div> <!-- end of row -->

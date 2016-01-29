@@ -51,5 +51,8 @@
   }
   .uib-tab{
     font-size: 30px;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
