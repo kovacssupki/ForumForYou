@@ -59,4 +59,12 @@ angular
           }
       };
       $scope.article = $scope.articles[$stateParams.id];
+
+        $scope.checkDisableLeft = function(id) {
+            return id < 2;
+        };
+
+        $scope.checkDisableRight = function(id) {
+            return id >= Object.keys($scope.articles).length;
+        }
 }]);

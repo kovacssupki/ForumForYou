@@ -1,0 +1,14 @@
+<article class="panel panel-{{ styles[$index % styles.length] }} recent-article">
+    <div class="panel-heading">
+        <p>{{ recentArticle.title }}</p>
+        <address>By <a href="#about/{{recentArticle.authorPage}}">{{ recentArticle.author }}</a> on <time>{{ recentArticle.date }}<time></address>
+    </div>
+    <div class="panel-body text-justify">
+        <img data-ng-src="{{recentArticle.image}}"/>
+        <span>{{ recentArticle.contentTrimmed }}</span>
+        <a href="#/articles/{{recentArticle.id}}" class="text"><small class="text-{{ styles[$index%3] }}">Read More</small></a>
+    </div>
+    <div class="panel-footer">
+        <p class="tags"><span class="pull-left">Tags:&nbsp;</span><span class="pull-left" ng-repeat="category in recentArticle.categories"><a href="#/articles/category/{{ category }}">{{ category }}</a>{{$last ? '' : ',&nbsp;'}}</span></p>
+    </div>
+</article>
