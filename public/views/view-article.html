@@ -35,4 +35,7 @@
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
-
+<div class="panel panel-default" data-ng-repeat="comment in article.comments">
+    <div class="panel-heading">{{comment.author}}</div>
+    <div class="panel-body">{{comment.content}}</div>
+</div>
