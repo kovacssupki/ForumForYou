@@ -1,0 +1,88 @@
+.admin{
+  @include media('<=tablet') {
+    margin: 5px;
+  }
+  @include media('<=phone') {
+    padding: 0;
+  }
+  .users {
+    margin-bottom: 30px;
+  }
+  .tabs{
+    .well{
+      padding: 50px;
+      @include media('<=tablet') {
+        padding: 25px;
+      }
+      @include media('<=phone') {
+        padding: 10px;
+      }
+      .form-group{
+        margin: 25px 5px;
+        @include media('<=tablet') {
+          margin: 10px 5px;
+        }
+        @include media('<=phone') {
+          margin: 5px 5px;
+        }
+      }
+      h1.text-center{
+        background: url($images +"/header-bg.jpg") center 48% no-repeat;
+        height: 120px;
+        padding-top: 4%;
+        margin: 0;
+      }
+    }
+    .profile{
+        .col-md-4{
+          padding-top: 30px;
+          img{
+            margin: 10px ;
+          }
+          button,input{
+            margin: 20px 10px;
+          }
+        }
+        .col-md-8{
+          .form-inline{
+            margin: 30px 20px;
+            font-size: 20px;
+            @include media('<=tablet') {
+              margin: 15px 10px;
+            }
+            @include media('<=phone') {
+              margin: 5px 5px;
+            }
+            input,textarea{
+              font-size: 20px;
+              width: 75%;
+              @include media('<=tablet') {
+                width: 100%;
+              }
+              @include media('<=phone') {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .messages{
+        blockquote{
+          margin-bottom: 35px;
+          padding-top: 0;
+        }
+        .form-inline{
+          margin: 30px 30px;
+          input,select{
+            margin: 5px 20px;
+          }
+        }
+      }
+  }
+  .uib-tab{
+    font-size: 30px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

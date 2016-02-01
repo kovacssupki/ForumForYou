@@ -8,31 +8,30 @@ menu {
   z-index: 9999 !important;
 }
 .navbar{
-    &.navbar-default{
-    li {
-      padding-top: 8px;
-      font-size: 18px;
-      a{
-        padding: 10px;
-      }
+  &.navbar-default{
+  li {
+    padding-top: 8px;
+    font-size: 18px;
+    a{
+      padding: 10px;
     }
   }
-    .navbar-header{
-      .navbar-brand{
-        font-size: 20px;
-        padding-top:10px;
-        line-height: 36px;
-      }
+}
+  .navbar-header{
+    .navbar-brand{
+      font-size: 20px;
+      padding-top:10px;
+      line-height: 36px;
     }
   }
-.dropdown{
-  .dropdown-menu{
-    li{
-      margin: 0;
-
-      a{
-        padding: 15px;
+  .dropdown{
+    .dropdown-menu{
+      li{
         margin: 0;
+        a{
+          padding: 15px;
+          margin: 0;
+        }
       }
     }
   }
