@@ -82,6 +82,9 @@ button.btn-default {
     border-width: 1px;
     color: black;
     }
+    &:hover{
+      background-color: #31708F;
+    }
 }
 
 textarea {
