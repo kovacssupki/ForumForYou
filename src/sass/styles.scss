@@ -34,8 +34,8 @@ body {
     font-size: 18px;
 }
 
-main{
-  padding: 50px;
+main {
+  padding: 30px;
   background-color: white;
 }
 
@@ -43,35 +43,11 @@ textarea {
   resize: vertical;
 }
 
-table{
-  tr{
-    th{
+table {
+  tr {
+    th {
+      min-width: 80px;
       text-align: center;
-    }
-  }
-}
-article {
-  .panel-body {
-    padding: 20px 10px 0;
-    & p {
-      font-size: 20px;
-    }
-    & img {
-      padding: 20px;
-    }
-  }
-  .panel-footer {
-    background-color: white;
-    line-height: 10px;
-    border-style: none;
-
-    p.tags {
-      font-size: 13px;
-      padding-left: 195px;
-
-      a {
-        color: inherit;
-      }
     }
   }
 }

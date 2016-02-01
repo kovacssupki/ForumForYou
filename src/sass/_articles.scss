@@ -14,6 +14,7 @@ article {
     }
   }
   .panel-body {
+    padding: 20px 10px 0;
     img {
       float: left;
       width: 200px;
@@ -22,6 +23,43 @@ article {
     a {
       text-decoration: none;
       color: black;
+    }
+  }
+  .panel-footer {
+    background-color: white;
+    border-style: none;
+    border-top: 1px solid #ecf0f1;
+    line-height: 15px;
+    overflow: hidden;
+
+    p.tags {
+      font-size: 13px;
+      padding-left: 195px;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+ul.pagination {
+  display: block;
+  height: 50px;
+  li:first-child {
+    a {
+      border-radius: 25px;
+    }
+  }
+  li:last-child {
+    a {
+      border-radius: 25px;
+    }
+  }
+  a {
+    width: 180px;
+    &.disable {
+      pointer-events: none;
     }
   }
 }
