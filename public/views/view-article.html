@@ -39,7 +39,7 @@
     <div class="panel-heading">Comments <span class="badge" data-ng-show="article.comments.length > 0"> {{article.comments.length}}</span></div>
     <div class="panel-body" data-ng-repeat="comment in article.comments">
         <img data-ng-src="{{comment.avatar}}"/>
-        <span>{{comment.author}}</span>
+        <span>{{comment.author}} </span><small>on {{comment.date}}</small>
         <p><q>{{comment.content}}</q></p>
         <div class="reply">
             <a href="" data-ng-click="showForm=!showForm">Reply</a>
@@ -61,7 +61,7 @@
             <a href="" data-ng-click="showReplies=!showReplies">View replies <span class="badge" data-ng-show="comment.replies.length > 0"> {{comment.replies.length}}</span></a>
             <div data-ng-show="showReplies" data-ng-repeat="reply in comment.replies">
                 <img data-ng-src="{{reply.avatar}}"/>
-                <span>{{reply.author}}</span>
+                <span>{{reply.author}} </span><small>on {{reply.date}}</small>
                 <p><q>{{reply.content}}</q></p>
             </div>
         </div>
