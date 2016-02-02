@@ -6,7 +6,6 @@ angular
       GetRequest.get_data('http://localhost/PROJECTS/github/ForumForYou/src/data/users.json').then(function(resp){
         $scope.users = resp.data;
 
-        console.log($scope.users);
         GetRequest.get_data('http://localhost/PROJECTS/github/ForumForYou/src/data/articles.json').then(function(resp){
 
           $scope.art = resp.data;
