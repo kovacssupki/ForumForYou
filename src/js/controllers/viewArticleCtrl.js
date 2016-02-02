@@ -17,6 +17,9 @@ angular
             $scope.addComment = function(newComment) {
                 $scope.article.comments.push(newComment);
             };
+            $scope.addReply = function(newReply) {
+                $scope.article.replies.push(newReply);
+            };
         });
 }]);
 
