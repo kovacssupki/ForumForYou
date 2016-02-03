@@ -7,6 +7,22 @@
             <small>{{ author.quoteAuthor }} in <cite title="Source Title">{{ author.quoteSource }}</cite></small>
         </blockquote>
     </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 carousel">
+            <div>
+                <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                    <uib-slide ng-repeat="slide in slides" active="slide.active">
+                        <img data-ng-src="{{slide.image}}">
+                        <div class="carousel-caption">
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </uib-slide>
+                </uib-carousel>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr>
     <div class="panel-body text-justify">
         <p>{{ author.description }}</p>
         <address>
