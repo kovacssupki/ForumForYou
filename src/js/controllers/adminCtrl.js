@@ -11,7 +11,7 @@ angular
         $scope.by = '$';
         $scope.datePicker = DatePicker;
         $scope.validate = Validate;
-        
+
         GetRequest.get_data('../src/data/users.json').then(function(resp){
           $scope.users = resp.data;
         });
