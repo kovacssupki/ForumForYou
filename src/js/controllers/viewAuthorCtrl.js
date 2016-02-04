@@ -3,34 +3,32 @@ angular
   .controller('viewAuthorCtrl', ['$scope', '$stateParams','GetRequest',
   function($scope, $stateParams,GetRequest) {
 
-      GetRequest.get_data('../src/data/users.json').then(function(resp){
-        $scope.users = resp.data;
+      GetRequest.get_data('../src/data/users.json').then(function(response){
+        $scope.users = response.data;
 
-        console.log($scope.users);
-        GetRequest.get_data('../src/data/articles.json').then(function(resp){
-
-          $scope.art = resp.data;
+      GetRequest.get_data('../src/data/articles.json').then(function(response){
+        $scope.articles = response.data.articles;
 
           for (var i = 0; i < $scope.users.length; i++){
             if($scope.users[i].id === $stateParams.id){
               $scope.author = $scope.users[i];
             }
           }
+        $scope.myInterval = 5000;
+        $scope.noWrapSlides = false;
+        $scope.slides = [];
+
+        for (var i = 0; i < $scope.articles.length; i++) {
+          if ($scope.articles[i].authorPage === $stateParams.id) {
+            $scope.slides.push({
+              image: $scope.articles[i].image,
+              text: $scope.articles[i].title
+            });
+          }
+        }
+        console.log($scope.slides);
       });
     });
-    $scope.myInterval = 5000;
-    $scope.noWrapSlides = false;
-    var slides = $scope.slides = [];
-
-    $scope.addSlide = function() {
-      slides.push({
-        image: ["assets/images/fun.jpg", "assets/images/book.jpg", "assets/images/bio.jpg", "assets/images/angular.jpg", "assets/images/android.jpg", "assets/images/facebook.jpg"][slides.length % 6],
-        text: ["Fun facts!", "100 Good Books to Read: Book Recommendations", "The Organic Effect...", "Learning Angular JS", "Android 6 Vs. iOS 9: The Showdown", "Breaking news about Facebook!"][slides.length % 6]
-      });
-    };
-
-    for (var i = 0; i < 6; i++) {
-      $scope.addSlide();
-    }
 }]);
+
 
