@@ -98,7 +98,7 @@
               </div>
 
               <date-picker></date-picker>
-              <button type="submit" class="btn btn-warning btn-block btn-lg">Add</button>
+              <button type="submit" class="btn btn-warning btn-block btn-lg" ng-disabled="addArticle.$invalid">Add</button>
               </form>
             </div> <!-- end of well -->
           </uib-tab>
@@ -143,7 +143,7 @@
                 <div class="form-inline">
                   <label class="col-md-3">Description: </label>
                   <span ng-show="display"> {{users[0].description}}</span>
-                  <textarea ng-hide="display" type="text" class="form-control" ng-model="users[0].description"></textarea>
+                  <textarea ng-hide="display" type="text" class="form-control" ng-model="users[0].description" rows="5"></textarea>
                 </div>
 
                 <div class="form-inline">
@@ -168,7 +168,8 @@
                 <label>Order by: </label>
                 <select ng-model="by" class="form-control">
                    <option value="$"></option>
-                   <option value="date">Date</option>
+                   <option value="date">Date (asc)</option>
+                   <option value="-date">Date (desc)</option>
                    <option value="from">From</option>
                    <option value="body">Body</option>
                 </select>
