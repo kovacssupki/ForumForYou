@@ -2,6 +2,7 @@ angular
   .module('Blog')
   .service('Validate',function() {
      return{
+
        check_min_length:function(form){
           if(form.$error.minlength){
              return true;

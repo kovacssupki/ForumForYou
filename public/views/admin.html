@@ -27,7 +27,7 @@
     </div>
 
     <div class="row tabs">
-      <uib-tabset justified="true">
+       <uib-tabset justified="true">
         <uib-tab heading="My Articles" class="text-center">
           <div class="well">
             <h1 class="text-center">My Articles</h1>
@@ -36,71 +36,70 @@
           </div>
         </uib-tab>
 
-        <uib-tab heading="Add article"  class="text-center">
+        <uib-tab heading="Add article"  class="text-center" >
           <div class="well">
             <h1 class="text-center">Add article</h1>
-            <form name="addArticle" novalidate>
-            <div class="form-group" ng-class="{'has-error': addArticle.title.$invalid && addArticle.title.$dirty, 'has-success': addArticle.title.$valid && addArticle.title.$dirty}">
-              <label for="title">Title</label>
-              <input
-              type="text"
-              class="form-control"
-              name="title"
-              ng-model="art.newArticle.title"
-              placeholder="Enter title..."
-              required
-              autofocus />
-              <p ng-show="validate.required(addArticle.title)" class="help-block">Title is required.</p>
-            </div>
+            <form name="addArticle" novalidate id="add">
+              <div class="form-group" ng-class="{'has-error': addArticle.title.$invalid && addArticle.title.$dirty, 'has-success': addArticle.title.$valid && addArticle.title.$dirty}">
+                <label>Title</label>
+                <input
+                type="text"
+                class="form-control"
+                name="title"
+                ng-model="art.newArticle.title"
+                placeholder="Enter title..."
+                required
+                autofocus />
+                <p ng-show="validate.required(addArticle.title)" class="help-block">Title is required.</p>
+              </div>
 
-            <div class="form-group" ng-class="{'has-error': addArticle.author.$invalid && addArticle.author.$dirty, 'has-success': addArticle.author.$valid && addArticle.author.$dirty}">
-              <label for="author">Author</label>
-              <input
-              type="text"
-              class="form-control"
-              name="author"
-              ng-model="art.newArticle.author"
-              placeholder="Enter author..."
-              required
-              autofocus />
-              <p ng-show="validate.required(addArticle.author)" class="help-block">Author is required.</p>
-            </div>
+              <div class="form-group" ng-class="{'has-error': addArticle.author.$invalid && addArticle.author.$dirty, 'has-success': addArticle.author.$valid && addArticle.author.$dirty}">
+                <label>Author</label>
+                <input
+                type="text"
+                class="form-control"
+                name="author"
+                ng-model="art.newArticle.author"
+                placeholder="Enter author..."
+                required
+                autofocus />
+                <p ng-show="validate.required(addArticle.author)" class="help-block">Author is required.</p>
+              </div>
 
-            <div class="form-group" ng-class="{'has-error': addArticle.content.$invalid && addArticle.content.$dirty, 'has-success': addArticle.content.$valid && addArticle.content.$dirty}">
-              <label for="content">Body</label>
-              <textarea
-              type="text"
-              class="form-control"
-              name="content"
-              ng-model="art.newArticle.contentTrimmed"
-              placeholder="Type here..."
-              rows="15"
-              required>
-              </textarea>
-              <p ng-show="validate.required(addArticle.content)" class="help-block">Body is required.</p>
-            </div>
+              <div class="form-group" ng-class="{'has-error': addArticle.content.$invalid && addArticle.content.$dirty, 'has-success': addArticle.content.$valid && addArticle.content.$dirty}">
+                <label>Body</label>
+                <textarea
+                class="form-control"
+                name="content"
+                ng-model="art.newArticle.contentTrimmed"
+                placeholder="Type here..."
+                rows="15"
+                required>
+                </textarea>
+                <p ng-show="validate.required(addArticle.content)" class="help-block">Body is required.</p>
+              </div>
 
-            <div class="form-group">
-                <label for="category">Category</label>
-              <ui-select
-              multiple
-              tagging
-              tagging-label="(custom 'new' label)"
-              ng-model="art.newArticle.categories"
-              theme="bootstrap"
-              sortable="true"
-              ng-disabled="disabled"
-              title="Choose a category"
-              class="form-control">
-                <ui-select-match placeholder="Select category...">{{$item}}</ui-select-match>
-                <ui-select-choices repeat="category in art.categories">{{category}}</ui-select-choices>
-              </ui-select>
-            </div>
+              <div class="form-group">
+                <label>Category</label>
+                <ui-select
+                multiple
+                tagging
+                tagging-label="(custom 'new' label)"
+                ng-model="art.newArticle.categories"
+                theme="bootstrap"
+                sortable="true"
+                ng-disabled="disabled"
+                title="Choose a category"
+                class="form-control">
+                  <ui-select-match placeholder="Select category...">{{$item}}</ui-select-match>
+                  <ui-select-choices repeat="category in art.categories">{{category}}</ui-select-choices>
+                </ui-select>
+              </div>
 
-            <date-picker></date-picker>
-            <button type="submit" class="btn btn-warning btn-block btn-lg">Add</button>
+              <date-picker></date-picker>
+              <button type="submit" class="btn btn-warning btn-block btn-lg" ng-disabled="addArticle.$invalid">Add</button>
             </form>
-          </div> <!-- end of well -->
+          </div> <!--end of well-->
         </uib-tab>
 
         <uib-tab heading="Profile"  class="text-center">

@@ -19,6 +19,8 @@ angular
           $scope.art = resp.data;
         });
 
+        console.log(document.getElementById('add'));
+
         $scope.display = true;
         $scope.save = function(){
           $scope.display = true;

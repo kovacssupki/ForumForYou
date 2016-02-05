@@ -6,7 +6,7 @@
       <h1 class="text-center"><strong>Sign Up</strong></h1>
     </div>
 
-    <form name="signup" ng-submit="signup(signup)" novalidate>
+    <form name="signup" ng-submit="signup(signup)" novalidate id="signup">
       <div class="modal-body">
         <!-- NAME -->
         <div class="form-group" ng-class="{'has-error': signup.name.$invalid && signup.name.$dirty, 'has-success': signup.name.$valid && signup.name.$dirty}">

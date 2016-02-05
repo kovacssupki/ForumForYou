@@ -6,5 +6,6 @@ angular
        $scope.datePicker = DatePicker;
        $scope.validate = Validate;
        $scope.user = {};
+       console.log(document.getElementById('signup'));
 
 }]);
