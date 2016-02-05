@@ -18,11 +18,13 @@
             name="name"
             class="form-control"
             ng-model="user.name"
-            placeholder="Enter your name...">
+            placeholder="Enter your name..."
+            required>
+            <p ng-show="validate.required(contact.name)" class="help-block">Name is required.</p>
           </div>
           <!-- EMAIL -->
          <div class="form-group" ng-class="{'has-error': contact.email.$invalid && contact.email.$dirty, 'has-success': contact.email.$valid && contact.email.$dirty}">
-           <label>Email *</label>
+           <label>Email </label>
            <input
            type="email"
            name="email"
@@ -36,7 +38,7 @@
          </div>
          <!-- DESCRIPTION -->
          <div class="form-group" ng-class="{'has-error': contact.description.$invalid && contact.description.$dirty, 'has-success': contact.description.$valid && contact.description.$dirty}">
-           <label for="description"></span>Description *</label>
+           <label for="description"></span>Description </label>
            <textarea
            type="text"
            class="form-control"
@@ -50,11 +52,11 @@
            <p ng-show="validate.required(contact.description)" class="help-block">Description is required.</p>
          </div>
 
-         <button type="submit" class="btn btn-default btn-success btn-block"><i class="fa fa-paper-plane fa-lg"></i> Send mail</button>
+         <button type="submit" class="btn btn-default btn-success btn-block" ng-disabled="contact.$invalid"><i class="fa fa-paper-plane fa-lg"></i> Send mail</button>
         </div>
 
         <div class="modal-footer">
-          <p class="text-danger pull-left"><strong>*</strong> required fields</p>
+          <p class="text-danger pull-left"><strong>*</strong> all fields are required</p>
           <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
         </div>
 
