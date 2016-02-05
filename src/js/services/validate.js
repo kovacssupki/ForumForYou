@@ -28,13 +28,7 @@ angular
           }else{
              alert('INCORECT CREDENTIALS! TRY AGAIN!');
           }
-       },
-      //  $scope.apply_class = function(form){
-      //    if(form.$invalid && form.$dirty){
-      //      return true;
-      //    }else{
-      //      return false;
-      //    }
-      //  }
+       }
+
      };
   });
