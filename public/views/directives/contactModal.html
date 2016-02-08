@@ -11,47 +11,47 @@
       <form name="contact" novalidate>
         <div class="modal-body">
           <!-- NAME -->
-          <div class="form-group" ng-class="{'has-error': contact.name.$invalid && contact.name.$dirty, 'has-success': contact.name.$valid && contact.name.$dirty}">
+          <div class="form-group" data-ng-class="{'has-error': contact.name.$invalid && contact.name.$dirty, 'has-success': contact.name.$valid && contact.name.$dirty}">
             <label>Name </label>
             <input
             type="text"
             name="name"
             class="form-control"
-            ng-model="user.name"
+            data-ng-model="user.name"
             placeholder="Enter your name..."
             required>
-            <p ng-show="validate.required(contact.name)" class="help-block">Name is required.</p>
+            <p data-ng-show="validate.required(contact.name)" class="help-block">Name is required.</p>
           </div>
           <!-- EMAIL -->
-         <div class="form-group" ng-class="{'has-error': contact.email.$invalid && contact.email.$dirty, 'has-success': contact.email.$valid && contact.email.$dirty}">
+         <div class="form-group" data-ng-class="{'has-error': contact.email.$invalid && contact.email.$dirty, 'has-success': contact.email.$valid && contact.email.$dirty}">
            <label>Email </label>
            <input
            type="email"
            name="email"
            class="form-control"
-           ng-model="user.email"
-           ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"
+           data-ng-model="user.email"
+           data-ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i"
            placeholder="Email adress..."
            required>
-           <p ng-show="validate.valid(contact.email)" class="help-block">Enter a valid email.</p>
-           <p ng-show="validate.required(contact.email)" class="help-block">Email is required.</p>
+           <p data-ng-show="validate.valid(contact.email)" class="help-block">Enter a valid email.</p>
+           <p data-ng-show="validate.required(contact.email)" class="help-block">Email is required.</p>
          </div>
          <!-- DESCRIPTION -->
-         <div class="form-group" ng-class="{'has-error': contact.description.$invalid && contact.description.$dirty, 'has-success': contact.description.$valid && contact.description.$dirty}">
+         <div class="form-group" data-ng-class="{'has-error': contact.description.$invalid && contact.description.$dirty, 'has-success': contact.description.$valid && contact.description.$dirty}">
            <label></span>Description </label>
            <textarea
            class="form-control"
            name="description"
            placeholder="Type here..."
-           ng-model="user.description"
-           ng-minlength="40"
+           data-ng-model="user.description"
+           data-ng-minlength="40"
            required>
            </textarea>
-           <p ng-show="validate.check_min_length(contact.description)" class="help-block">Description is too short.</p>
-           <p ng-show="validate.required(contact.description)" class="help-block">Description is required.</p>
+           <p data-ng-show="validate.check_min_length(contact.description)" class="help-block">Description is too short.</p>
+           <p data-ng-show="validate.required(contact.description)" class="help-block">Description is required.</p>
          </div>
 
-         <button type="submit" class="btn btn-default btn-success btn-block" ng-disabled="contact.$invalid"><i class="fa fa-paper-plane fa-lg"></i> Send mail</button>
+         <button type="submit" class="btn btn-default btn-success btn-block" data-ng-disabled="contact.$invalid"><i class="fa fa-paper-plane fa-lg"></i> Send mail</button>
         </div>
 
         <div class="modal-footer">

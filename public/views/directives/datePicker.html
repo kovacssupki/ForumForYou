@@ -5,14 +5,14 @@
     type="text"
     class="form-control"
     uib-datepicker-popup
-    ng-model="datePicker.date"
+    data-ng-model="datePicker.date"
     is-open="datePicker.opened"
     close-text="Close"/>
     <span class="input-group-btn">
-      <button type="button" class="btn btn-success" ng-click="datePicker.open()"><i class="fa fa-calendar fa-lg"></i></button>
+      <button type="button" class="btn btn-success" data-ng-click="datePicker.open()"><i class="fa fa-calendar fa-lg"></i></button>
     </span>
     <span class="input-group-btn">
-      <button type="button" class="btn btn-danger" ng-click="datePicker.clear()">Clear</button>
+      <button type="button" class="btn btn-danger" data-ng-click="datePicker.clear()">Clear</button>
     </span>
   </div>
 </div>

@@ -23,14 +23,14 @@
 
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" ng-model="search" placeholder="Search..." >
+          <input type="text" class="form-control" data-ng-model="search" placeholder="Search..." >
         </div>
       </form>
 
       <ul class="nav navbar-nav navbar-right">
         <li><a ui-sref="admin" ui-sref-active="active">Admin</a></li>
         <li class="dropdown" id="connect" data-drop-down="dropdown-menu">
-          <a href="#" class="dropdown-toggle" >Connect <i class="fa fa-chevron-down"></i></a>
+          <a href="#" class="dropdown-toggle" >Connect</a>
           <ul class="dropdown-menu">
             <li><a ui-sref="signup"><i class="fa fa-user-plus fa-lg"></i> Sign up</a></li>
             <li><a data-toggle="modal" data-target="#loginModal" data-backdrop="true"><i class="fa fa-sign-in fa-lg" ></i> Log In</a></li>
