@@ -18,7 +18,8 @@ angular
                 $scope.article.comments.push(newComment);
             };
             $scope.addReply = function(newReply) {
-                $scope.article.replies.push(newReply);
+                if (!$scope.article.comments.replies) $scope.article.comments.replies = [];
+                $scope.article.comments.replies.push(newReply);
             };
         });
 }]);
