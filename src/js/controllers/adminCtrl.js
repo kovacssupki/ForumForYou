@@ -5,13 +5,10 @@ angular
     'DatePicker',
     'Validate',
     'GetRequest',
-    '$http',
-    function($scope,DatePicker,Validate,GetRequest,$http) {
+    function($scope,DatePicker,Validate,GetRequest) {
         $scope.search = {};
         $scope.by = '$';
         $scope.datePicker = DatePicker;
-        $scope.validate = Validate;
-
         GetRequest.get_data('../src/data/users.json').then(function(resp){
           $scope.users = resp.data;
         });
@@ -22,12 +19,10 @@ angular
 
         $scope.display = true;
         $scope.save = function(){
-            $scope.display = true;
-         }
+          $scope.display = true;
+         };
         $scope.edit = function(){
           $scope.display = false;
         };
-        // $scope.save = function(){
-        //   $scope.display = true;
-        // };
+
 }]);

@@ -2,6 +2,7 @@ angular
   .module('Blog')
   .service('Validate',function() {
      return{
+
        check_min_length:function(form){
           if(form.$error.minlength){
              return true;
@@ -28,13 +29,7 @@ angular
           }else{
              alert('INCORECT CREDENTIALS! TRY AGAIN!');
           }
-       },
-      //  $scope.apply_class = function(form){
-      //    if(form.$invalid && form.$dirty){
-      //      return true;
-      //    }else{
-      //      return false;
-      //    }
-      //  }
+       }
+
      };
   });

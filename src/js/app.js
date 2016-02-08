@@ -5,6 +5,6 @@ angular
         // 'ngAnimate',
         'smoothScroll',
         'ngSanitize',
-        'ui.select'
-
+        'ui.select',
+        'ncy-angular-breadcrumb'
     ]);

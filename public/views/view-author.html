@@ -11,7 +11,7 @@
         <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6 carousel">
             <div>
                 <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
-                    <uib-slide ng-repeat="slide in slides" active="slide.active">
+                    <uib-slide data-ng-repeat="slide in slides" active="slide.active">
                         <img data-ng-src="{{slide.image}}">
                         <div class="carousel-caption">
                             <p>{{slide.text}}</p>
