@@ -6,5 +6,5 @@ angular
         'smoothScroll',
         'ngSanitize',
         'ui.select',
-        'ncy-angular-breadcrumb'
+        //'ncy-angular-breadcrumb'
     ]);

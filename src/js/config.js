@@ -1,11 +1,11 @@
 angular
     .module('Blog')
-    .config(function($breadcrumbProvider) {
-       $breadcrumbProvider.setOptions({
-         prefixStateName: 'home',
-         templateUrl: 'views/home.html'
-       });
-     })
+    //.config(function($breadcrumbProvider) {
+    //   $breadcrumbProvider.setOptions({
+    //     prefixStateName: 'home',
+    //     templateUrl: 'views/home.html'
+    //   });
+    // })
     .config([
         '$urlRouterProvider',
         '$stateProvider',
@@ -57,7 +57,7 @@ angular
                     url:'/admin',
                     templateUrl:'views/admin.html',
                     controller:'AdminCtrl'
-                })
+                });
             $urlRouterProvider.otherwise("/");
         }
     ]);
