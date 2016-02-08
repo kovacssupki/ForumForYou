@@ -4,5 +4,6 @@ angular
         'ui.bootstrap',
         'smoothScroll',
         'ngSanitize',
-        'ui.select'
+        'ui.select',
+        'angularUtils.directives.dirPagination'
     ]);
