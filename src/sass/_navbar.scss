@@ -10,7 +10,7 @@ menu {
 .navbar{
   &.navbar-default{
   li {
-    padding-top: 10px;
+    padding-top: 8px;
     font-size: 20px;
     a{
       padding: 10px;
@@ -20,7 +20,7 @@ menu {
   .navbar-header{
     .navbar-brand{
       font-size: 20px;
-      padding-top:12px;
+      padding-top:11px;
       line-height: 36px;
     }
   }
@@ -41,6 +41,7 @@ menu {
   height: 321px;
 }
 
-// .active{
-//     color: #18BC9C;
-// }
+.activeTab{
+    border:2px solid $turquoise;
+    border-radius: 15px;
+}

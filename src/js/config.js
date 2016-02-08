@@ -1,11 +1,5 @@
 angular
     .module('Blog')
-    //.config(function($breadcrumbProvider) {
-    //   $breadcrumbProvider.setOptions({
-    //     prefixStateName: 'home',
-    //     templateUrl: 'views/home.html'
-    //   });
-    // })
     .config([
         '$urlRouterProvider',
         '$stateProvider',
@@ -15,18 +9,12 @@ angular
                 .state('home',{
                     url: '/',
                     templateUrl:'views/home.html',
-                    controller: 'homeCtrl',
-                    ncyBreadcrumb: {
-                      label: 'Home'
-                    }
+                    controller: 'homeCtrl'
                 })
                 .state('articles',{
                     url: '/articles',
                     templateUrl:'views/articles.html',
-                    controller: 'articlesCtrl',
-                    ncyBreadcrumb: {
-                      label: 'Articles'
-                    }
+                    controller: 'articlesCtrl'
                 })
                 .state('viewCategory',{
                     url: '/articles/category/:category',

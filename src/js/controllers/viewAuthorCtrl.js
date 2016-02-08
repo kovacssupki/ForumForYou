@@ -26,9 +26,6 @@ angular
             });
           }
         }
-        console.log($scope.slides);
       });
     });
 }]);
-
-

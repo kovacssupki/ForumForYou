@@ -9,20 +9,35 @@
 
       <form name="login" novalidate>
         <div class="modal-body">
-           <div class="form-group">
+           <div class="form-group" data-ng-class="{'has-error': login.username.$invalid && login.username.$dirty, 'has-success': login.username.$valid && login.username.$dirty}">
              <label for="username"></span>Username</label>
-             <input type="text" class="form-control" name="username" placeholder="Enter your username..." autofocus>
+             <input
+             type="text"
+             data-ng-model="user.username"
+             class="form-control"
+             name="username"
+             placeholder="Enter your username..."
+             autofocus
+             required>
+             <p data-ng-show="validate.required(login.username)" class="help-block">Username is required.</p>
            </div>
 
-           <div class="form-group">
+           <div class="form-group" data-ng-class="{'has-error': login.password.$invalid && login.password.$dirty, 'has-success': login.password.$valid && login.password.$dirty}">
              <label for="password"></span>Password</label>
-             <input type="password" class="form-control" name="password" placeholder="Enter your password...">
+             <input
+             type="password"
+             data-ng-model="user.password"
+             class="form-control"
+             name="password"
+             placeholder="Enter your password..."
+             required>
+             <p data-ng-show="validate.required(login.password)" class="help-block">Password is required.</p>
            </div>
            <a href="#">Need help?</a>
          </div>
 
          <div class="modal-footer">
-           <button type="submit" class="btn btn-default btn-success btn-block">Log in</button>
+           <button type="submit" class="btn btn-default btn-success btn-block" data-ng-disabled="login.$invalid">Log in</button>
          </div>
 
        </form>

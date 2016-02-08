@@ -16,10 +16,10 @@
 </head>
 
 <body ng-app="Blog" data-spy="scroll" data-target="main">
-    <menu></menu>
+    <menu ></menu>
     <main class="container" smooth-scroll duration="1000" easing="easeInOutQuart" >
+      <!-- <ui-breadcrumbs displayname-property="displayName"></ui-breadcrumbs> -->
         <div class="col-md-12">
-            <!-- <div ncy-breadcrumb></div> -->
             <ui-view></ui-view>
         </div>
     </main>
@@ -40,7 +40,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-sanitize.js"></script>
 
     <!-- BOWER components -->
-    <!--<script src="../bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>-->
+    <script src="../bower_components/angular-utils-ui-breadcrumbs/uiBreadcrumbs.js"></script>
+    <script src="../bower_components/angularUtils-pagination/dirPagination.js"></script>
     <!-- END BOWER components -->
 
     <!-- APP -->
