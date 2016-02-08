@@ -9,6 +9,7 @@ angular
        controller:function($scope,Validate){
          $scope.validate = Validate;
          $scope.user = {};
+      
        }
     };
 });

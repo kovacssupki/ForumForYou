@@ -10,8 +10,8 @@ menu {
 .navbar{
   &.navbar-default{
   li {
-    padding-top: 8px;
-    font-size: 18px;
+    padding-top: 10px;
+    font-size: 20px;
     a{
       padding: 10px;
     }
@@ -20,7 +20,7 @@ menu {
   .navbar-header{
     .navbar-brand{
       font-size: 20px;
-      padding-top:10px;
+      padding-top:12px;
       line-height: 36px;
     }
   }
@@ -40,3 +40,7 @@ menu {
   background: url($images +"/header-bg.jpg") center 86% no-repeat;
   height: 321px;
 }
+
+// .active{
+//     color: #18BC9C;
+// }

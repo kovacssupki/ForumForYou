@@ -1,4 +1,4 @@
-<div class="list-group" ng-repeat="article in category">
+<div class="list-group" data-ng-repeat="article in category">
     <a href="#/articles/{{ article.id }}" class="list-group-item">
         <h4 class="list-group-item-heading">{{ article.title }}</h4>
         <p class="list-group-item-text"><small>By {{ article.author }} on {{ article.date }}</small></p>
