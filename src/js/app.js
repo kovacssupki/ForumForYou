@@ -2,9 +2,9 @@ angular
     .module('Blog', [
         'ui.router',
         'ui.bootstrap',
-        // 'ngAnimate',
         'smoothScroll',
         'ngSanitize',
         'ui.select',
-        'ncy-angular-breadcrumb'
+        // 'angularUtils.directives.uiBreadcrumbs',
+        // 'angularUtils.directives.dirPagination'
     ]);
