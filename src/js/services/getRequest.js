@@ -1,3 +1,4 @@
+'use strict';
 angular
   .module('Blog')
   .service('GetRequest',['$http','$q',function($http,$q) {
@@ -8,6 +9,5 @@ angular
         d.resolve(data);
       });
       return d.promise;
-    }
-
+    };
 }]);
