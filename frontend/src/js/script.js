@@ -1,3 +1,4 @@
+'use strict';
 document.addEventListener('mousewheel', function(e) {
     e.preventDefault();
     var steps = 60,
