@@ -1,0 +1,74 @@
+<ul class="pagination">
+    <li class="pull-left text-center">
+        <a data-ng-href="#/articles/{{article.id - 1}}" aria-label="Previous" data-ng-class="{'disable': checkDisableLeft(article.id)}">
+            <span aria-hidden="true">&laquo; Previous article</span>
+        </a>
+    </li>
+    <li class="pull-right text-center">
+        <a data-ng-href="#/articles/{{article.id + 1}}" aria-label="Next" data-ng-class="{'disable': checkDisableRight(article.id)}">
+            <span aria-hidden="true">Next article &raquo;</span>
+        </a>
+    </li>
+</ul>
+
+<article class="panel panel-default">
+    <div class="panel-heading">
+        <p>{{ article.title }}</p>
+        <address>By <a data-ng-href="{{ article.authorPage }}">{{ article.author }}</a> on <time>{{ article.date }}</time></address>
+    </div>
+    <div class="panel-body text-justify">
+        <img data-ng-src="{{ article.thumbnail }}"/>
+        <p>{{ article.content }}</p>
+    </div>
+</article>
+
+<form>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" data-ng-model="newComment.author" id="name" placeholder="Jane Doe" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" data-ng-model="newComment.email" id="email" placeholder="jane.doe@email.com" required>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea class="form-control" data-ng-model="newComment.content" id="comment" rows="3" placeholder="Leave your comment here..."></textarea>
+    </div>
+    <button data-ng-click="addComment(newComment)" type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<div class="panel panel-default comment text-justify">
+    <div class="panel-heading">Comments <span class="badge" data-ng-show="article.comments.length > 0"> {{article.comments.length}}</span></div>
+    <div class="panel-body" data-ng-repeat="comment in article.comments">
+        <img data-ng-src="{{comment.avatar}}"/>
+        <span>{{comment.author}} </span><small>on {{comment.date}}</small>
+        <p><q>{{comment.content}}</q></p>
+        <div class="reply">
+            <a href="" data-ng-click="showForm=!showForm">Reply</a>
+            <form data-ng-show="showForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" data-ng-model="newReply.author" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" data-ng-model="newReply.email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Reply</label>
+                    <textarea class="form-control" data-ng-model="newReply.content" id="comment" rows="3"></textarea>
+                </div>
+                <button data-ng-click="addReply(newReply)" type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+            <a href="" data-ng-click="showReplies=!showReplies">View replies <span class="badge" data-ng-show="comment.replies.length > 0"> {{comment.replies.length}}</span></a>
+            <div data-ng-show="showReplies" data-ng-repeat="reply in comment.replies">
+                <img data-ng-src="{{reply.avatar}}"/>
+                <span>{{reply.author}} </span><small>on {{reply.date}}</small>
+                <p><q>{{reply.content}}</q></p>
+            </div>
+        </div>
+        <hr data-ng-hide="$index = $last">
+    </div>
+</div>

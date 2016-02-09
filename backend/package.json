@@ -1,0 +1,30 @@
+{
+  "name": "ForumForYou",
+  "version": "0.0.1",
+  "description": "An example module to illustrate the usage of a package.json",
+  "author": "Fortech",
+  "contributors": [
+    {
+      "name": "Chira Stefan",
+      "email": "stefan.chira@fortech.ro"
+    },
+    {
+      "name": "Pop Stanca",
+      "email": "stanca.pop@fortech.ro"
+    }
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kovacssupki/ForumForYou.git"
+  },
+  "dependencies": {
+    "bower": "^1.7.2",
+    "gulp-cli": "^1.1.0",
+    "koa": "^1.1.2",
+    "koa-bodyparser": "^2.0.1",
+    "koa-router": "^5.3.0",
+    "koa-validator": "^0.6.4"
+  },
+  "devDependencies": {}
+}
