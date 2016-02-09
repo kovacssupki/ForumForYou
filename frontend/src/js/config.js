@@ -45,7 +45,7 @@ angular
                     url:'/admin',
                     templateUrl:'views/admin.html',
                     controller:'AdminCtrl'
-                })
+                });
             $urlRouterProvider.otherwise("/");
         }
     ]);
