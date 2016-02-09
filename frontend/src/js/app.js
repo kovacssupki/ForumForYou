@@ -5,6 +5,5 @@ angular
         'smoothScroll',
         'ngSanitize',
         'ui.select',
-        // 'angularUtils.directives.uiBreadcrumbs',
-        // 'angularUtils.directives.dirPagination'
+        'angularUtils.directives.dirPagination'
     ]);
