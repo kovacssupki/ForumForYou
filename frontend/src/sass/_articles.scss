@@ -43,25 +43,15 @@ article {
   }
 }
 
-ul.pagination {
+ul.previous-next {
+  list-style-type: none;
+  font-weight: bold;
   display: block;
   height: 50px;
-  li:first-child {
-    a {
-      border-radius: 25px;
-    }
-  }
-  li:last-child {
-    a {
-      border-radius: 25px;
-    }
-  }
-  a {
-    width: 180px;
-    &.disable {
+  padding-left: 0;
+  a.disable {
       pointer-events: none;
     }
-  }
 }
 
 .panel.panel-default.comment {

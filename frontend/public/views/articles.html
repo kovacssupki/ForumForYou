@@ -1,4 +1,8 @@
+<div class="text-center">
+    <dir-pagination-controls boundary-links="true" template-url="../bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+</div>
+<article-body dir-paginate="article in articles|filter:search|orderBy:'-id'|itemsPerPage:6"></article-body>
+<div class="text-center">
+    <dir-pagination-controls boundary-links="true" template-url="../bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+</div>
 
-  <dir-pagination-controls boundary-links="true" template-url="../bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
-  <article-body dir-paginate="article in articles|filter:search|orderBy:'-id'|itemsPerPage:4"></article-body>
-  <dir-pagination-controls boundary-links="true" template-url="../bower_components/angularUtils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
