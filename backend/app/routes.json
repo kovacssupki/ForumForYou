@@ -1,0 +1,566 @@
+[{
+    "method": "put",
+    "path": "/account",
+    "handler": "handlers/account/add.js",
+    "validate": [{
+        "param": "username",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "pin",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString", {
+                "name": "len",
+                "params": [6, 10]
+            }
+        ]
+    }, {
+        "param": "questionID",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "answer",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/account/firstrun",
+    "handler": "handlers/account/firstrun.js"
+}, {
+    "method": "patch",
+    "path": "/account/pin",
+    "handler": "handlers/account/updatePin.js",
+    "validate": [{
+        "param": "oldPin",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString", {
+                "name": "len",
+                "params": [6, 10]
+            }
+        ]
+    }, {
+        "param": "pin",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString", {
+                "name": "len",
+                "params": [6, 10]
+            }
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/account/question",
+    "handler": "handlers/account/detailQuestion.js"
+}, {
+    "method": "post",
+    "path": "/account/resetPin",
+    "handler": "handlers/account/resetPin.js",
+    "validate": [{
+        "param": "answer",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "pin",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/account/verify",
+    "handler": "handlers/account/verify.js",
+    "validate": [{
+        "param": "username",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "pin",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString", {
+                "name": "len",
+                "params": [6, 10]
+            }
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/account/verifyAnswer",
+    "handler": "handlers/account/verifyAnswer.js",
+    "validate": [{
+        "param": "answer",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/account/minimumConfigurationTime",
+    "handler": "handlers/account/getMinimumConfigurationTime.js"
+}, {
+    "method": "post",
+    "path": "/account/minimumConfigurationTime",
+    "handler": "handlers/account/updateMinimumConfigurationTime.js"
+}, {
+    "method": "get",
+    "path": "/application",
+    "handler": "handlers/application/list.js"
+}, {
+    "method": "put",
+    "path": "/application",
+    "handler": "handlers/application/add.js",
+    "validate": [{
+        "param": "appName",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "app",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/application/:appId",
+    "handler": "handlers/application/detail.js",
+    "validate": [{
+        "param": "appId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/application/:appId/field",
+    "handler": "handlers/application/listFields.js",
+    "validate": [{
+        "param": "appId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "configId",
+        "type": "body",
+        "validators": [
+            "optional",
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/application/read",
+    "handler": "handlers/application/read.js"
+}, {
+    "method": "get",
+    "path": "/cmsserver/info",
+    "handler": "handlers/upnp/info.js"
+}, {
+    "method": "get",
+    "path": "/configuration",
+    "handler": "handlers/configuration/list.js"
+}, {
+    "method": "put",
+    "path": "/configuration",
+    "handler": "handlers/configuration/add.js",
+    "validate": [{
+        "param": "fields",
+        "type": "body",
+        "validators": [
+            "isObject", {
+                "name": "contains",
+                "params": ["appID"]
+            }, {
+                "name": "contains",
+                "params": ["fields"]
+            }, {
+                "name": "contains",
+                "params": ["name"]
+            }
+        ]
+    }, {
+        "param": "files",
+        "type": "body",
+        "validators": [
+            "isObject"
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/configuration/:configId",
+    "handler": "handlers/configuration/detail.js",
+    "validate": [{
+        "param": "configId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "patch",
+    "path": "/configuration/:configId",
+    "handler": "handlers/configuration/update.js",
+    "validate": [{
+        "param": "configId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "fields",
+        "type": "body",
+        "validators": [
+            "isObject", {
+                "name": "contains",
+                "params": ["fields"]
+            }, {
+                "name": "contains",
+                "params": ["name"]
+            }
+        ]
+    }, {
+        "param": "files",
+        "type": "body",
+        "validators": [
+            "isObject"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/configuration/delete",
+    "handler": "handlers/configuration/remove.js",
+    "validate": [{
+        "param": "configs",
+        "type": "body",
+        "validators": [
+            "isArray", {
+                "name": "len",
+                "params": [1, 100]
+            }
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/download",
+    "handler": "handlers/download/content.js",
+    "validate": [{
+        "param": "schedules",
+        "type": "body",
+        "validators": [
+            "isArray", {
+                "name": "len",
+                "params": [1, 100]
+            }
+        ]
+    }, {
+        "param": "apps",
+        "type": "body",
+        "validators": [
+            "optional",
+            "isArray"
+        ]
+    }, {
+        "param": "media",
+        "type": "body",
+        "validators": [
+            "optional",
+            "isArray"
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/dashboard/info",
+    "handler": "handlers/dashboard/info.js"
+}, {
+    "method": "get",
+    "path": "/display",
+    "handler": "handlers/display/list.js"
+}, {
+    "method": "get",
+    "path": "/display/:displayId",
+    "handler": "handlers/display/detail.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "patch",
+    "path": "/display/:displayId",
+    "handler": "handlers/display/update.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "name",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "put",
+    "path": "/display",
+    "handler": "handlers/display/add.js",
+    "validate": [{
+        "param": "displays",
+        "type": "body",
+        "validators": [
+            "isArray", {
+                "name": "len",
+                "params": [1, 100]
+            }
+        ]
+    }]
+}, {
+    "method": "delete",
+    "path": "/display/:displayId",
+    "handler": "handlers/display/remove.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/display/:displayId/control",
+    "handler": "handlers/display/control.js",
+    "validate": [{
+            "param": "displayId",
+            "type": "path",
+            "validators": [
+                "notEmpty",
+                "isString"
+            ]
+        }, {
+            "param": "action",
+            "type": "body",
+            "validators": [{
+                "name": "inArray",
+                "params": [
+                    ["turnOn", "turnOff"]
+                ]
+            }]
+        }
+
+    ]
+}, {
+    "method": "post",
+    "path": "/display/:displayId/deploy",
+    "handler": "handlers/display/deploy.js",
+    "validate": [{
+            "param": "displayId",
+            "type": "path",
+            "validators": [
+                "isString",
+                "notEmpty"
+            ]
+        }, {
+            "param": "schedule",
+            "type": "body",
+            "validators": [
+                "isString",
+                "notEmpty"
+            ]
+        }
+
+    ]
+}, {
+    "method": "get",
+    "path": "/display/:displayId/screenshot",
+    "handler": "handlers/display/screenshot.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/display/:displayId/updateFirmware",
+    "handler": "handlers/display/updateFirmware.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }, {
+        "param": "fields",
+        "type": "body",
+        "validators": [
+            "isObject",
+            "optional"
+        ]
+    }, {
+        "param": "files",
+        "type": "body",
+        "validators": [
+            "isObject", {
+                "name": "contains",
+                "params": ["fileToUpload"]
+            }
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/display/discover",
+    "handler": "handlers/display/discover.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "body",
+        "validators": [
+            "isString",
+            "notEmpty"
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/display/:displayId/reset",
+    "handler": "handlers/display/reset.js",
+    "validate": [{
+        "param": "displayId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/schedule",
+    "handler": "handlers/schedule/list.js"
+}, {
+    "method": "put",
+    "path": "/schedule",
+    "handler": "handlers/schedule/add.js",
+    "validate": [{
+        "param": "name",
+        "type": "body",
+        "validators": [
+            "isString",
+            "notEmpty"
+        ]
+    }, {
+        "param": "configs",
+        "type": "body",
+        "validators": [
+            "isArray", {
+                "name": "len",
+                "params": [1, 100]
+            }
+        ]
+    }]
+}, {
+    "method": "get",
+    "path": "/schedule/:scheduleId",
+    "handler": "handlers/schedule/detail.js",
+    "validate": [{
+        "param": "scheduleId",
+        "type": "path",
+        "validators": [
+            "isString",
+            "notEmpty"
+        ]
+    }]
+}, {
+    "method": "delete",
+    "path": "/schedule/:scheduleId",
+    "handler": "handlers/schedule/remove.js",
+    "validate": [{
+        "param": "scheduleId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+}, {
+    "method": "patch",
+    "path": "/schedule/:scheduleId",
+    "handler": "handlers/schedule/update.js",
+    "validate": [{
+        "param": "scheduleId",
+        "type": "path",
+        "validators": [
+            "isString",
+            "notEmpty"
+        ]
+    }, {
+        "param": "name",
+        "type": "body",
+        "validators": [
+            "isString",
+            "notEmpty"
+        ]
+    }, {
+        "param": "configs",
+        "type": "body",
+        "validators": [
+            "isArray", {
+                "name": "len",
+                "params": [1, 100]
+            }
+        ]
+    }]
+}, {
+    "method": "post",
+    "path": "/settings/backup",
+    "handler": "handlers/setting/backup.js"
+}, {
+    "method": "post",
+    "path": "/settings/restore",
+    "handler": "handlers/setting/restore.js"
+}]
