@@ -30,10 +30,6 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
     app.use( koa_body( {
         jsonLimit: settings.jsonLimit,
         multipart: true,
-        formidable: {
-            uploadDir: settings.path.tmp,
-            multples: true
-        }
     }));
     app.use( router.demux );
 
@@ -42,9 +38,9 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
 
 exports[ '@singleton' ] = true;
 exports[ '@require' ] = [
-    'api/routes',
-    'libs/responsify',
-    'libs/settings',
+    'app/routes',
+    'library/responsify',
+    'library/settings',
     'middleware/logging',
     'middleware/router',
     'middleware/validate',

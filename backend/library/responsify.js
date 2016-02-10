@@ -17,12 +17,12 @@ exports = module.exports = ( ) => {
         };
 
     return ( app ) => {
-        app.context.success = ( data ) => {
+        app.context.success = function( data ) {
             responseSuccess.data = data;
             this.body = responseSuccess;
         };
 
-        app.context.fail = ( code, error ) => {
+        app.context.fail = function( code, error ) {
             responseFail.error.code = error.code;
             responseFail.error.msg = error.message;
             responseFail.error.details = error.details;

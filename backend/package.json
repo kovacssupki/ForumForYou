@@ -13,23 +13,28 @@
       "email": "stanca.pop@fortech.ro"
     }
   ],
-  "scripts": {},
+  "scripts": {
+    "start": "node --stack_trace_limit=3 index.js",
+    "test": "mocha --harmony"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kovacssupki/ForumForYou.git"
   },
   "dependencies": {
     "bower": "^1.7.2",
+    "electrolyte": "^0.2.0",
     "grunt": "^0.4.5",
     "grunt-contrib-watch": "^0.6.1",
     "gulp-cli": "^1.1.0",
     "koa": "^1.1.2",
     "koa-body": "^1.2.1",
-    "koa-static": "^2.0.0",
     "koa-bodyparser": "^2.0.1",
     "koa-livereload": "^0.1.23",
     "koa-router": "^5.3.0",
-    "koa-validator": "^0.6.4"
+    "koa-static": "^2.0.0",
+    "koa-validator": "^0.6.4",
+    "methods": "^1.1.2"
   },
   "devDependencies": {}
 }

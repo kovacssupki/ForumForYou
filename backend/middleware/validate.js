@@ -74,5 +74,5 @@ exports = module.exports = ( v ) => {
 
 exports[ '@singleton' ] = true;
 exports[ '@require' ] = [
-    'libs/validator'
+    'library/validator'
 ];

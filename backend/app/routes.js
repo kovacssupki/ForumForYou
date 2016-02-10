@@ -47,7 +47,7 @@ let getParamNames = (func) => {
     };
 
 exports = module.exports = () => {
-    let routes = JSON.parse(fs.readFileSync('./api/routes.json')),
+    let routes = JSON.parse(fs.readFileSync('./app/routes.json')),
         routeMap = routes.slice();
 
     routes.forEach((r) => {
