@@ -1,5 +1,25 @@
-[{
+[
+  {
     "method": "get",
-    "path": "/home",
+    "path": "/",
     "handler": "controllers/home.js"
-}]
+  },
+  {
+    "method": "get",
+    "path": "/articles",
+    "handler": "controllers/articles.js"
+  },
+  {
+    "method": "get",
+    "path": "/articles/:artId",
+    "handler": "controllers/articleDetails.js",
+    "validate": [{
+        "param": "artId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isInt"
+        ]
+    }]
+  }
+]
