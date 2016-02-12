@@ -15,8 +15,8 @@ exports = module.exports = ( ) => {
 
         for(var i=0; i<articles.length; i++){
           if(articles[i].id === +artId){
-            console.log(articles[i]);
             var article = articles[i];
+            console.log(articles[i]);
           }
         }
         this.success(
