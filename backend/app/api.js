@@ -2,7 +2,8 @@
 
 var koa         = require( 'koa' ),
     koa_body    = require( 'koa-body' ),
-    koa_static  = require( 'koa-static');
+    koa_static  = require( 'koa-static'),
+    livereload = require('koa-livereload');
 
 exports = module.exports = ( routes, responsify, settings, logging, router, validate ) => {
     routes.forEach((r) => {
@@ -24,7 +25,8 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
     //app.use( koa_static(settings.path.contentMedia));
     //app.use( koa_static(settings.path.firmware));
     //app.use( koa_static(settings.path.screenshot));
-
+    app.use(livereload());
+    console.log();
     app.use( logging );
     //app.use( authentification );
     app.use( koa_body( {
@@ -45,4 +47,3 @@ exports[ '@require' ] = [
     'middleware/router',
     'middleware/validate',
 ];
-
