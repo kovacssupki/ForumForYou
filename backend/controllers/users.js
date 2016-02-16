@@ -3,10 +3,11 @@
 
 exports = module.exports = ( ) => {
     return function* ( ) {
-        var articles = JSON.parse(yield fs.readFile('models/articles.json', 'utf8')).articles;
+
+        var users = JSON.parse(yield fs.readFile('models/users.json', 'utf8'));
         this.success(
           {
-          articles:articles
+          users:users
           }
         );
     };

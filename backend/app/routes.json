@@ -21,5 +21,23 @@
             "isInt"
         ]
     }]
+  },
+  {
+    "method": "get",
+    "path": "/users",
+    "handler": "controllers/users.js"
+  },
+  {
+    "method": "get",
+    "path": "/users/:userId",
+    "handler": "controllers/userDetails.js",
+    "validate": [{
+        "param": "userId",
+        "type": "path",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
   }
 ]
