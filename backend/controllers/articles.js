@@ -6,7 +6,7 @@ exports = module.exports = ( ) => {
         var articles = JSON.parse(yield fs.readFile('models/articles.json', 'utf8')).articles;
         this.success(
           {
-          articles:articles
+          articles:articles,
           }
         );
     };
