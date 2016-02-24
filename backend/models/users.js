@@ -1,19 +1,35 @@
-// grab the things we need
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+'use strict';
+var mongoose = require('mongoose'),
+    timestamps = require('mongoose-timestamp'),
+    Schema = mongoose.Schema;
 
-// create a schema
-var userSchema = new Schema({
-  name: String,
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },  
-  created_at: { type: Date, default: Date.now },
-  last_auth: Date
-});
+exports = module.exports = (settings) => {
 
-// the schema is useless so far
-// we need to create a model using it
-var User = mongoose.model('User', userSchema);
+    //create Schema
+    var userSchema = new Schema({
+      firstName: String,
+      lastName: String,
+      username: {type:String, required: true, unique: true},
+      email: {type:String, required: true, unique: true},
+      description: String,
+      quote: String,
+      quoteAuthor: String,
+      quoteSource: String,
+      photo: String,
+      messages: [{
+        date:{type:Date},
+        from:{type:String},
+        body:{type:String}
+      }]
+    });
 
-// make this available to our users in our Node applications
-module.exports = User;
+    //methods
+
+    userSchema.plugin(timestamps);
+    //create model using Schema
+    return mongoose.model('User',userSchema);
+  }
+
+  exports['@singleton'] = true;
+  exports['@require'] = ['library/settings'];
+

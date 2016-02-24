@@ -10,5 +10,5 @@ var api      = ioc.create( 'app/api' ),
     settings = ioc.create( 'library/settings' ),
     server   = http.createServer( api.callback( ) );
 
-server.listen( settings.port );
-console.log('ForumForYou Server is running on ' + settings.host + ':' + settings.port);
+server.listen( settings.webPort, settings.webHost );
+console.log('ForumForYou Server is running on ' + settings.webHost + ':' + settings.webPort);

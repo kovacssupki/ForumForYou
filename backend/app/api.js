@@ -5,7 +5,9 @@ var koa         = require( 'koa' ),
     koa_static  = require( 'koa-static'),
     livereload = require('koa-livereload');
 
+
 exports = module.exports = ( routes, responsify, settings, logging, router, validate ) => {
+
     routes.forEach((r) => {
         let handler = r.handler,
             needsValidation = r.validate instanceof Array && r.validate.length;
@@ -17,7 +19,6 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
 
         router[ r.method ]( r.path, handler, r.handlerName );
     });
-
 
     let app = responsify( koa( ) );
     //app.use( koa_static(settings.path.appsData));
@@ -46,4 +47,5 @@ exports[ '@require' ] = [
     'middleware/logging',
     'middleware/router',
     'middleware/validate',
+    'models/users',
 ];
