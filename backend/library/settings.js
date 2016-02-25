@@ -25,7 +25,8 @@ exports = module.exports = () => {
         dbDebug: !!parseInt(process.env.MONGO_DEBUG, 10),
         syslogName: 'forumForYou',
         webHost: process.env.API_ADDRESS,
-        webPort: process.env.API_PORT
+        webPort: process.env.API_PORT,
+        salt: process.env.SALT
     };
 
 };
