@@ -69,4 +69,4 @@ exports = module.exports = (settings) => {
 };
 
 exports['@singleton'] = true;
-exports['@require'] = ['libs/settings'];
+exports['@require'] = ['library/settings'];

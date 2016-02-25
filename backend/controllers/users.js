@@ -1,19 +1,14 @@
 'use strict';
  var fs = require("co-fs");
 
-exports = module.exports = ( ) => {
+exports = module.exports = ( Users ) => {
     return function* ( ) {
-
-        var users = JSON.parse(yield fs.readFile('models/users.json', 'utf8'));
-        this.success(
-          {
-          users:users
-          }
-        );
+        var users = yield Users.find({}).exec();
+        this.success(users);
     };
 };
 
 exports[ 'singleton' ] = true;
-// exports[ '@require' ] = [
-//    'node_modules/co-fs'
-// ];
+exports[ '@require' ] = [
+    'models/user'
+ ];
