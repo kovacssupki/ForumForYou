@@ -11,6 +11,7 @@ exports = module.exports = (settings) => {
       lastName: String,
       username: {type:String, required: true, unique: true},
       email: {type:String, required: true, unique: true},
+      password: String,
       description: String,
       quote: String,
       quoteAuthor: String,
@@ -32,4 +33,3 @@ exports = module.exports = (settings) => {
 
   exports['@singleton'] = true;
   exports['@require'] = ['library/settings'];
-

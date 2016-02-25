@@ -30,7 +30,7 @@ exports = module.exports = () => {
 
 };
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/users');
+//var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost/users');
 
 exports['@singleton'] = true;

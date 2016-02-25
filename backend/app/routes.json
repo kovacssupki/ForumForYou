@@ -39,5 +39,34 @@
             "isString"
         ]
     }]
+  },
+  {
+    "method": "put",
+    "path": "/user/register",
+    "handler": "controllers/registerUser.js",
+    "validate": [{
+        "param": "username",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    },
+    {
+        "param": "password",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    },
+    {
+        "param": "email",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isEmail"
+        ]
+    }]
   }
 ]
