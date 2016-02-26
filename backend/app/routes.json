@@ -1,11 +1,6 @@
 [
   {
     "method": "get",
-    "path": "/",
-    "handler": "controllers/home.js"
-  },
-  {
-    "method": "get",
     "path": "/articles",
     "handler": "controllers/articles.js"
   },

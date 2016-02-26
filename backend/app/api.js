@@ -21,6 +21,8 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
     });
 
     let app = responsify( koa( ) );
+    app.use(koa_static('../frontend'));
+    app.use(koa_static('../frontend/src'));
     //app.use( koa_static(settings.path.appsData));
     //app.use( koa_static(settings.path.backup));
     //app.use( koa_static(settings.path.contentMedia));
