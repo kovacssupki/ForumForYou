@@ -11,8 +11,6 @@ exports = module.exports = (User) => {
 
 
 
-      yield user.save();
-
 
 
         let msg = "Hello to Node JS";
