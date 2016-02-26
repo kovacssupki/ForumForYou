@@ -66,3 +66,12 @@ button.btn-default {
 textarea {
   resize: none;
 }
+ 
+#chat {
+  background: pink;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  right: 0;
+  bottom:0;
+}
