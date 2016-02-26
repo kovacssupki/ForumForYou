@@ -26,9 +26,13 @@ exports = module.exports = () => {
         syslogName: 'forumForYou',
         webHost: process.env.API_ADDRESS,
         webPort: process.env.API_PORT,
-        path: '../frontend'
+        path: '../frontend',
+        salt: process.env.SALT
     };
 
 };
+
+//var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost/users');
 
 exports['@singleton'] = true;
