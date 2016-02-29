@@ -4,9 +4,7 @@ exports = module.exports = (User) => {
     return function* ( ) {
 
       var user = new User(this.request.body);
-      user.encrypt();
-    //  user.verifyUniqueUsername(this.request.body.username);
-    //  user.verifyUniqueEmail(this.request.body.email);
+      user.encrypt();    
       yield  user.save();
 
 
