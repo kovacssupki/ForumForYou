@@ -56,6 +56,19 @@
         ]
     },
     {
+        "param": "name",
+        "type": "body",
+        "validators": [
+        ]
+    },
+    {
+        "param": "createdAt",
+        "type": "body",
+        "validators": [
+            "notEmpty"
+        ]
+    },
+    {
         "param": "email",
         "type": "body",
         "validators": [

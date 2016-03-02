@@ -6,7 +6,7 @@
       <h1 class="text-center"><strong>Sign Up</strong></h1>
     </div>
 
-    <form name="signup" data-ng-submit="signup(signup)" novalidate>
+    <form name="signup" data-ng-submit="register(user)" novalidate>
       <div class="modal-body">
         <!-- NAME -->
         <div class="form-group" data-ng-class="{'has-error': signup.name.$invalid && signup.name.$dirty, 'has-success': signup.name.$valid && signup.name.$dirty}">
@@ -65,7 +65,10 @@
         </div>
         <!-- DATE -->
         <date-picker></date-picker>
-        <p class="text-danger pull-left"><strong>*</strong> required fields</p>
+        <div class="text-danger"><strong>*</strong> required fields</div>
+        <br>
+        <div class="text-danger" data-ng-show="errorMessage"><strong>{{errorMessage}}</strong></div>
+        <div class="text-success" data-ng-show="successMessage"><strong>{{successMessage}}</strong></div>
       </div>
       <br>
       <div class="modal-footer">

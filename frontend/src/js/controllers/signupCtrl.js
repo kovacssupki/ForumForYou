@@ -1,22 +1,24 @@
 angular
   .module('Blog')
-  .controller('SignupController',['$scope','DatePicker','Validate',
-  function($scope,DatePicker,Validate) {
+  .controller('SignupController', ['$scope', 'DatePicker', 'Validate', 'PutRequest', '$log',
+    function($scope, DatePicker, Validate, PutRequest, $log) {
 
-       $scope.datePicker = DatePicker;
-       $scope.validate = Validate;
-       $scope.user = {};
+      $scope.datePicker = DatePicker;
+      $scope.validate = Validate;
+      $scope.user = {};
+      $scope.user.createdAt = new Date(); //default value for date
 
-       $scope.signup = function() {
-         GetRequest.get_data('../src/data/articles.json').then(function(response){
-             $scope.articles = response.data.articles;
-             $scope.styles = response.data.styles;
-             $scope.categories = response.data.categories;
-             $scope.recentArticles = [];
-             for (var i = 0; i < 3; i++) {
-                 $scope.recentArticles.push($scope.articles[i]);
-             }
-         });
-       };
+      $scope.register = function(user) {
+        console.log(user);
+        $scope.errorMessage = null; //hide any previous shown error message
+        PutRequest.put_data('../user/register', user).then(function(response) {
+            $scope.successMessage = "User Registered successfully";
+            $scope.user = {}; //reset form
+            $scope.signup.$setPristine(); //reset form
+          }, function(errorObject) {
+            console.log(errorObject.data.error.msg);
+            $scope.errorMessage = errorObject.data.error.msg;
 
-}]);
+          });
+      };
+    }]);

@@ -8,8 +8,7 @@ exports = module.exports = (settings) => {
 
   //create Schema
   var userSchema = new Schema({
-    firstName: String,
-    lastName: String,
+    name: String,
     username: {
       type: String,
       required: true,
