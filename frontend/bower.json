@@ -1,0 +1,28 @@
+{
+  "name": "ForumForYou",
+  "description": "An example module to illustrate the usage of a package.json",
+  "main": "",
+  "authors": [
+    "[object Object]",
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kovacssupki/ForumForYou",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.0"
+  }
+}
