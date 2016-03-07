@@ -3,6 +3,7 @@
 var koa         = require( 'koa' ),
     koa_body    = require( 'koa-body' ),
     koa_static  = require( 'koa-static'),
+    io          = require('koa-socket'),
     livereload  = require('koa-livereload');
 
 
@@ -22,6 +23,7 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
     });
 
     let app = responsify( koa( ) );
+    let IO = new io();
     app.use(koa_static('../frontend'));
     //app.use(koa_static('../frontend/src'));
     //app.use( koa_static(settings.path.appsData));
@@ -37,7 +39,9 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
         jsonLimit: settings.jsonLimit,
         multipart: true,
     }));
+    IO.attach(app);
     app.use( router.demux );
+    //io.use(router.demux);
 
     return app;
 };
