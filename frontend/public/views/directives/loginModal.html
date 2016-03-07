@@ -1,4 +1,4 @@
-<div id="loginModal" class="modal fade">
+<div id="loginModal" class="modal fade" data-ng-controller="LoginController">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
 
@@ -7,7 +7,7 @@
         <h1 class="text-center"><strong>Log in</strong></h1>
       </div>
 
-      <form name="login" novalidate>
+      <form name="login" data-ng-submit="Login(user)">
         <div class="modal-body">
            <div class="form-group" data-ng-class="{'has-error': login.username.$invalid && login.username.$dirty, 'has-success': login.username.$valid && login.username.$dirty}">
              <label for="username"></span>Username</label>
@@ -34,10 +34,13 @@
              <p data-ng-show="validate.required(login.password)" class="help-block">Password is required.</p>
            </div>
            <a href="#">Need help?</a>
+           <div class="text-danger" data-ng-show="errorMessage"><strong>{{errorMessage}}</strong></div>
+           <div class="text-success" data-ng-show="successMessage"><strong>{{successMessage}}</strong></div>
          </div>
 
          <div class="modal-footer">
            <button type="submit" class="btn btn-default btn-success btn-block btn-lg" data-ng-disabled="login.$invalid">Log in</button>
+
          </div>
 
        </form>

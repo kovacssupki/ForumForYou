@@ -2,6 +2,7 @@
 var mongoose = require('mongoose'),
   timestamps = require('mongoose-timestamp'),
   crypto = require('crypto'),
+  co = require('co'),
   Schema = mongoose.Schema;
 
 exports = module.exports = (settings) => {
@@ -49,6 +50,17 @@ exports = module.exports = (settings) => {
   };
 
 
+  userSchema.methods.comparePassword = function(userPassword, dbPassword) {
+  };
+
+  userSchema.methods.login = co.wrap(function * login() {
+    var resultsVar=  yield mongoose.models["User"].findOne({username: this.username});
+
+ return resultsVar;
+   });
+
+
+
   userSchema.pre('save', function(next) {
     var self = this;
     mongoose.models["User"].findOne({
@@ -58,7 +70,7 @@ exports = module.exports = (settings) => {
       if (err) {
         next(err);
       } else if (results) { //there was a result found, so the email address exists
-        self.invalidate("email", "email must be unique");
+        self.invalidate("email", "email must be unique2");
         next(new Error("email must be unique"));
       } else {
         next()
@@ -74,7 +86,7 @@ exports = module.exports = (settings) => {
       if (err) {
         next(err);
       } else if (results) { //there was a result found, so the username exists
-        self.invalidate("username", "username must be unique");
+        self.invalidate("username", "username must be unique2");
         next(new Error("username must be unique"));
       } else {
         next()
