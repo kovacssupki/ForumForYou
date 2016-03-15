@@ -8,7 +8,7 @@ ioc.loader( ioc.node( './' ) );
 
 var api = ioc.create( 'app/api' ),
 	settings = ioc.create( 'library/settings' ),
-	database = ioc.create( 'library/database' ),
+	// database = ioc.create( 'library/database' ),
 	server = http.createServer( api.callback() ),
 	chat = ioc.create( 'middleware/socketChat' ),
 	io = require( 'socket.io' )( server );

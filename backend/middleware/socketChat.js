@@ -1,6 +1,9 @@
 'use strict';
-exports = module.exports = () => {
+exports = module.exports = ( User ) => {
 	return ( socket, io ) => {
+		var users = false;
+
+
 		socket.broadcast.emit( 'connection', {
 			message: 'hi'
 		} );
@@ -18,6 +21,6 @@ exports = module.exports = () => {
 	}
 }
 exports[ 'singleton' ] = true;
-// exports[ '@require' ] = [
-//    'node_modules/socket.io'
-// ];
+exports[ '@require' ] = [
+   'models/user'
+];
