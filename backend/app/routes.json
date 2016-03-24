@@ -1,9 +1,9 @@
 [
   {
     "method": "get",
-    "path": "/articles",
-    "handler": "controllers/articles.js"
-  },
+    "path": "/",
+    "handler": "controllers/home.js"
+  },  
   {
     "method": "get",
     "path": "/articles/:artId",
@@ -91,6 +91,64 @@
     },
     {
         "param": "password",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    }]
+  },
+  {
+    "method": "put",
+    "path": "/article/post",
+    "handler": "controllers/saveArticlesCtrl.js",
+    "validate": [{
+        "param": "title",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    },
+    {
+        "param": "author",
+        "type": "body",
+        "validators": [
+            "notEmpty",
+            "isString"
+        ]
+    },
+    {
+        "param": "body",
+        "type": "body",
+        "validators": [
+          "notEmpty"
+        ]
+    },
+    {
+        "param": "categories",
+        "type": "body",
+        "validators": [
+            "notEmpty"
+        ]
+    }]
+  },
+  {
+    "method": "get",
+    "path": "/article/post",
+    "handler": "controllers/getArticlesCtrl.js"
+  },
+  {
+    "method": "get",
+    "path": "/article/categories",
+    "handler": "controllers/categoriesCtrl.js"
+  },
+  {
+    "method": "put",
+    "path": "/article/categories",
+    "handler": "controllers/updateCategoriesCtrl.js",
+    "validate": [{
+        "param": "title",
         "type": "body",
         "validators": [
             "notEmpty",

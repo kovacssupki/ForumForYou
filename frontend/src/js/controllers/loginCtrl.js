@@ -1,7 +1,7 @@
 angular
   .module('Blog')
-  .controller('LoginController', ['$scope', 'DatePicker', 'Validate', 'PutRequest', '$log',
-    function($scope, DatePicker, Validate, PutRequest, $log) {
+  .controller('LoginController', ['$scope', 'DatePicker', 'Validate', 'PutRequest', '$log','$cookies',
+    function($scope, DatePicker, Validate, PutRequest, $log, $cookies) {
 
       $scope.user = {};
       //$scope.user.updatedAt = new Date(); //default value for date
@@ -10,8 +10,11 @@ angular
 
         $scope.errorMessage = null; //hide any previous shown error message
         PutRequest.put_data('../user/login', user).then(function(response) {
-          //console.log(response);
+          console.log(response);
             $scope.successMessage = "User logged in successfully";
+            var x = $cookies.getAll();
+            console.log(x);
+          
             $scope.user = {}; //reset form
             $scope.login.$setPristine(); //reset form
           }, function(errorObject) {

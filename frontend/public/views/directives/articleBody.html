@@ -1,12 +1,12 @@
 <article class="panel panel-{{ styles[$index % styles.length] }}">
     <div class="panel-heading">
         <p>{{ article.title }}</p>
-        <address>By <a data-ng-href="#about/{{ article.authorPage }}">{{ article.author.name }}</a> on <time>{{ article.date }}</time></address>
+        <address>By <a data-ng-href="#about/{{ article.authorPage }}">{{ article.author.name }}</a> on <time>{{article.createdAt}}</time></address>
     </div>
     <div class="panel-body text-justify">
         <img data-ng-src="{{article.thumbnail}}"/>
         <span>{{ article.contentTrimmed }}</span>
-        <a data-ng-href="#/articles/{{ article.id }}" class="text"><small class="text-{{ styles[$index%6] }}">Read More</small></a>
+        <a data-ng-href="#/articles/{{ article._id }}" class="text"><small class="text-{{ styles[$index%6] }}">Read More</small></a>
     </div>
     <div class="panel-footer">
         <p class="tags"><span class="pull-left">Tags:&nbsp;</span><span class="pull-left" data-ng-repeat="category in article.categories"><a data-ng-href="#/articles/category/{{ category }}">{{ category }}</a>{{$last ? '' : ',&nbsp;'}}</span></p>

@@ -1,9 +1,13 @@
 'use strict';
- var fs = require("co-fs");
 
-exports = module.exports = ( Users ) => {
+
+exports = module.exports = ( User ) => {
     return function* ( ) {
-        var users = yield Users.find({}).exec();
+      var requestCookie = this.cookies.get('LoginCookie');
+        var allUsers = yield User.find({});
+        var currentUser = yield User.findOne({currentCookie: requestCookie});
+        var users = {allUsers, currentUser}
+        console.log(users);
         this.success(users);
     };
 };

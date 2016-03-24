@@ -3,11 +3,12 @@
 var koa = require( 'koa' ),
 	koa_body = require( 'koa-body' ),
 	koa_static = require( 'koa-static' ),
-	livereload = require( 'koa-livereload' );
+	livereload = require( 'koa-livereload' ),
+	unless = require('koa-unless');
 
 
 
-exports = module.exports = ( routes, responsify, settings, logging, router, validate ) => {
+exports = module.exports = ( routes, responsify, settings, logging, router, validate, auth ) => {
 
 	routes.forEach( ( r ) => {
 		let handler = r.handler,
@@ -22,7 +23,11 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
 	} );
 
 	let app = responsify( koa() );
+	auth.unless= unless;
+
 	app.use( koa_static( '../frontend' ) );
+//	app.use(auth.unless({ path : ['/user/login', '/user/register']}, {method: 'GET'}));
+
 	//app.use(koa_static('../frontend/src'));
 	//app.use( koa_static(settings.path.appsData));
 	//app.use( koa_static(settings.path.backup));
@@ -40,6 +45,8 @@ exports = module.exports = ( routes, responsify, settings, logging, router, vali
 	//io.use(router.demux);
 
 
+
+
 	return app;
 };
 
@@ -51,5 +58,7 @@ exports[ '@require' ] = [
     'middleware/logging',
     'middleware/router',
     'middleware/validate',
-    'models/users',
+		'middleware/auth',
+    'models/users'
+
 ];

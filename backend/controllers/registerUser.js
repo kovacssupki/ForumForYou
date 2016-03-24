@@ -5,10 +5,7 @@ exports = module.exports = (User) => {
 
       var user = new User(this.request.body);
       user.encrypt();
-      var logUser = yield  user.save();
-      console.log("logUser:" + logUser);
-
-        let msg = "Hello to Node JS";
+      var logUser = yield  user.save();  
         this.success(user);
     };
 };

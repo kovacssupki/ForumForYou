@@ -7,15 +7,15 @@
         <table class="table table-bordered">
             <tbody>
                 <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
+
+                    <th>Name</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Motto</th>
                 </tr>
                 <tr data-ng-repeat="user in users">
-                    <td>{{user.firstName}}</td>
-                    <td>{{user.lastName}}</td>
+
+                    <td>{{user.name}}</td>
                     <td>{{user.username}}</td>
                     <td>{{user.email}}</td>
                     <td>
@@ -32,7 +32,7 @@
                 <div class="well">
                     <h1 class="text-center">My Articles</h1>
                     <br>
-                    <article-body data-ng-repeat="article in art.articles|filter:search|orderBy:'-id'|filter:{authorPage:'stefan'}"></article-body>
+                    <article-body data-ng-repeat="article in art|orderBy:'_id'"></article-body>
                 </div>
             </uib-tab>
             <uib-tab heading="Add article"  class="text-center">
@@ -59,7 +59,7 @@
                             id="author"
                             class="form-control"
                             name="author"
-                            data-ng-model="art.newArticle.author.name"
+                            data-ng-model="author.name"
                             placeholder="Enter author..."
                             required
                             autofocus/>
@@ -80,9 +80,9 @@
                         </div>
                         <div class="form-group">
                             <label for="category">Category</label>
-                            <ui-select multiple tagging tagging-label="(custom 'new' label)" data-ng-model="art.newArticle.categories" theme="bootstrap" sortable="true" ng-disabled="disabled" title="Choose a category" class="form-control">
-                                <ui-select-match placeholder="Select category...">{{$item}}</ui-select-match>
-                                <ui-select-choices repeat="category in art.categories">{{category}}</ui-select-choices>
+                            <ui-select multiple tagging tagging-label="(custom 'new' label)" data-ng-model="defaultCategories" theme="bootstrap" sortable="true" ng-disabled="disabled" title="Choose a category" class="form-control">
+                                <ui-select-match placeholder="Select category...">{{$item.title}}</ui-select-match>
+                                <ui-select-choices repeat="category in categories">{{category.title}}</ui-select-choices>
                             </ui-select>
                         </div>
                         <date-picker></date-picker>
@@ -94,7 +94,7 @@
                 <div class="well col-md-12 profile">
                     <h1 class="text-center">Profile</h1>
                     <div class="col-md-4">
-                        <img data-ng-src="{{users[0].photo}}" alt="{{users[0].id}}" width="100%" class="img-thumbnail"/>
+                        <img data-ng-src="{{author.photo}}" alt="{{author._id}}" width="100%" class="img-thumbnail"/>
                         <h3 class="text-center" data-ng-hide="display" data-ng-click="edit()">Change profile picture</h3>
                         <input type="file" name="photo" data-ng-hide="display" data-ng-click="edit()">
                         <button class="btn btn-success btn-block btn-lg" data-ng-show="display" data-ng-click="edit()">Edit</button>
@@ -102,34 +102,29 @@
                     </div>
                     <div class="col-md-8">
                         <div class="form-inline">
-                            <label class="col-md-3">First Name: </label>
-                            <span data-ng-show="display"> {{users[0].firstName}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="users[0].firstName" data-ng-keyup="add($event)">
-                        </div>
-                        <div class="form-inline">
-                            <label class="col-md-3">Last Name: </label>
-                            <span data-ng-show="display"> {{users[0].lastName}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="users[0].lastName">
+                            <label class="col-md-3">Name: </label>
+                            <span data-ng-show="display"> {{author.name}}</span>
+                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.name" data-ng-keyup="add($event)">
                         </div>
                         <div class="form-inline">
                             <label class="col-md-3">Username: </label>
-                            <span data-ng-show="display"> {{users[0].username}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="users[0].username">
+                            <span data-ng-show="display"> {{author.username}}</span>
+                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.username">
                         </div>
                         <div class="form-inline">
                             <label class="col-md-3">Email: </label>
-                            <span data-ng-show="display"> {{users[0].email}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="users[0].email">
+                            <span data-ng-show="display"> {{author.email}}</span>
+                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.email">
                         </div>
                         <div class="form-inline">
                             <label class="col-md-3">Description: </label>
-                            <span data-ng-show="display"> {{users[0].description}}</span>
-                            <textarea data-ng-hide="display" type="text" class="form-control" data-ng-model="users[0].description" rows="5"></textarea>
+                            <span data-ng-show="display"> {{author.description}}</span>
+                            <textarea data-ng-hide="display" type="text" class="form-control" data-ng-model="author.description" rows="5"></textarea>
                         </div>
                         <div class="form-inline">
                             <label class="col-md-3">Quote: </label>
-                            <span data-ng-show="display"> {{users[0].quote}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="users[0].quote">
+                            <span data-ng-show="display"> {{author.quote}}</span>
+                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.quote">
                         </div>
                     </div>
                 </div>
@@ -151,7 +146,7 @@
                         </select>
                     </div>
                     <ul>
-                        <li class="list-unstyled" data-ng-repeat="message in users[0].messages|orderBy:by|filter:search">
+                        <li class="list-unstyled" data-ng-repeat="message in author.messages|orderBy:by|filter:search">
                             <blockquote>
                                 {{message.body}}
                                 <br>

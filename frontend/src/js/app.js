@@ -5,5 +5,6 @@ angular
         'smoothScroll',
         'ngSanitize',
         'ui.select',
+        'ngCookies',
         'angularUtils.directives.dirPagination'
     ]);
