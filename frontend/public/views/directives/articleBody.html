@@ -9,6 +9,6 @@
         <a data-ng-href="#/articles/{{ article._id }}" class="text"><small class="text-{{ styles[$index%6] }}">Read More</small></a>
     </div>
     <div class="panel-footer">
-        <p class="tags"><span class="pull-left">Tags:&nbsp;</span><span class="pull-left" data-ng-repeat="category in article.categories"><a data-ng-href="#/articles/category/{{ category }}">{{ category }}</a>{{$last ? '' : ',&nbsp;'}}</span></p>
+        <p class="tags"><span class="pull-left">Tags:&nbsp;</span><span class="pull-left" data-ng-repeat="category in article.categories"><a data-ng-href="#/articles/category/{{ category._id }}">{{category.title}}</a>{{$last ? '' : ',&nbsp;'}}</span></p>
     </div>
 </article>

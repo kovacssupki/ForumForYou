@@ -34,15 +34,8 @@ exports = module.exports = (settings) => {
     quoteSource: String,
     photo: String,
     messages: [{
-      date: {
-        type: Date
-      },
-      from: {
-        type: String
-      },
-      body: {
-        type: String
-      }
+      type: Schema.Types.ObjectId,
+      ref: 'Categories'
     }]
   });
 

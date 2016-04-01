@@ -3,7 +3,7 @@
     "method": "get",
     "path": "/",
     "handler": "controllers/home.js"
-  },  
+  },
   {
     "method": "get",
     "path": "/articles/:artId",
@@ -103,7 +103,7 @@
     "path": "/article/post",
     "handler": "controllers/saveArticlesCtrl.js",
     "validate": [{
-        "param": "title",
+        "param": "fields.sentNewArticle.title",
         "type": "body",
         "validators": [
             "notEmpty",
@@ -111,7 +111,7 @@
         ]
     },
     {
-        "param": "author",
+        "param": "fields.sentNewArticle.author",
         "type": "body",
         "validators": [
             "notEmpty",
@@ -119,17 +119,30 @@
         ]
     },
     {
-        "param": "body",
+        "param": "fields.sentNewArticle.content",
         "type": "body",
         "validators": [
           "notEmpty"
         ]
     },
     {
-        "param": "categories",
+        "param": "fields.sentNewArticle.contentTrimmed",
         "type": "body",
         "validators": [
-            "notEmpty"
+          "isString"
+        ]
+    },
+    {
+        "param": "fields.sentNewArticle.categories",
+        "type": "body",
+        "validators": [ "isArray"
+
+        ]
+    },
+    {
+        "param": "fields.files",
+        "type": "body",
+        "validators": [
         ]
     }]
   },

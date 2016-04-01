@@ -15,11 +15,20 @@ exports = module.exports = (User) => {
           var dbCookie = dbUser.currentCookie;
           if(dbCookie === requestCookie)
           {
+
+            var expireDate = new Date();
+            var encryptCookie = this.cookies.get("LoginCookie");
+            
+            expireDate.setTime(expireDate.getTime() + 30 * 60 * 1000); //cookie expires in 30 minutes
+            this.cookies.set("LoginCookie", encryptCookie, {
+              expires: expireDate
+            });
+
             yield next;
           }
           else {
             this.fail(401, "Session expired");
-        
+
         }
 
         } else {

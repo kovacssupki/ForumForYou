@@ -1,162 +1,172 @@
 <div class="col-md-12 admin">
-    <div class="row users">
+  <div class="row users">
 
-        <h1 class="text-center padded">Admin</h1>
-        <br>
-        <h2>Users</h2>
-        <table class="table table-bordered">
-            <tbody>
-                <tr>
-
-                    <th>Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Motto</th>
-                </tr>
-                <tr data-ng-repeat="user in users">
-
-                    <td>{{user.name}}</td>
-                    <td>{{user.username}}</td>
-                    <td>{{user.email}}</td>
-                    <td>
-                        <q>{{ user.quote }}</q>
-                        <small>{{ user.quoteAuthor }} in <cite title="Source Title">{{ user.quoteSource }}</cite></small>
-                   </td>
-                </tr>
-             </tbody>
-      </table>
-    </div>
-    <div class="row tabs">
-        <uib-tabset justified="true">
-            <uib-tab heading="My Articles" class="text-center">
-                <div class="well">
-                    <h1 class="text-center">My Articles</h1>
-                    <br>
-                    <article-body data-ng-repeat="article in art|orderBy:'_id'"></article-body>
-                </div>
-            </uib-tab>
-            <uib-tab heading="Add article"  class="text-center">
-                <div class="well">
-                    <h1 class="text-center">Add article</h1>
-                    <form name="addArticle" novalidate>
-                        <div class="form-group" data-ng-class="{'has-error': addArticle.title.$invalid && addArticle.title.$dirty, 'has-success': addArticle.title.$valid && addArticle.title.$dirty}">
-                            <label for="title">Title</label>
-                            <input
-                            type="text"
-                            id="title"
-                            class="form-control"
-                            name="title"
-                            data-ng-model="art.newArticle.title"
-                            placeholder="Enter title..."
-                            required
-                            autofocus/>
-                            <p data-ng-show="validate.required(addArticle.title)" class="help-block">Title is required.</p>
-                        </div>
-                        <div class="form-group" data-ng-class="{'has-error': addArticle.author.$invalid && addArticle.author.$dirty, 'has-success': addArticle.author.$valid && addArticle.author.$dirty}">
-                            <label for="author">Author</label>
-                            <input
-                            type="text"
-                            id="author"
-                            class="form-control"
-                            name="author"
-                            data-ng-model="author.name"
-                            placeholder="Enter author..."
-                            required
-                            autofocus/>
-                            <p data-ng-show="validate.required(addArticle.author)" class="help-block">Author is required.</p>
-                        </div>
-                        <div class="form-group" data-ng-class="{'has-error': addArticle.contentTrimmed.$invalid && addArticle.contentTrimmed.$dirty, 'has-success': addArticle.contentTrimmed.$valid && addArticle.contentTrimmed.$dirty}">
-                            <label for="body">Body</label>
-                            <textarea
-                            id="body"
-                            class="form-control"
-                            name="contentTrimmed"
-                            data-ng-model="art.newArticle.contentTrimmed"
-                            placeholder="Type here..."
-                            rows="15"
-                            required>
-                            </textarea>
-                            <p data-ng-show="validate.required(addArticle.contentTrimmed)" class="help-block">Body is required.</p>
-                        </div>
-                        <div class="form-group">
-                            <label for="category">Category</label>
-                            <ui-select multiple tagging tagging-label="(custom 'new' label)" data-ng-model="defaultCategories" theme="bootstrap" sortable="true" ng-disabled="disabled" title="Choose a category" class="form-control">
-                                <ui-select-match placeholder="Select category...">{{$item.title}}</ui-select-match>
-                                <ui-select-choices repeat="category in categories">{{category.title}}</ui-select-choices>
-                            </ui-select>
-                        </div>
-                        <date-picker></date-picker>
-                        <button type="submit" class="btn btn-warning btn-block btn-lg" data-ng-disabled="addArticle.$invalid">Add</button>
-                    </form>
-                </div>
-            </uib-tab>
-            <uib-tab heading="Profile" class="text-center">
-                <div class="well col-md-12 profile">
-                    <h1 class="text-center">Profile</h1>
-                    <div class="col-md-4">
-                        <img data-ng-src="{{author.photo}}" alt="{{author._id}}" width="100%" class="img-thumbnail"/>
-                        <h3 class="text-center" data-ng-hide="display" data-ng-click="edit()">Change profile picture</h3>
-                        <input type="file" name="photo" data-ng-hide="display" data-ng-click="edit()">
-                        <button class="btn btn-success btn-block btn-lg" data-ng-show="display" data-ng-click="edit()">Edit</button>
-                        <button class="btn btn-info btn-block  btn-lg" data-ng-hide="display" data-ng-click="save()">Save</button>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="form-inline">
-                            <label class="col-md-3">Name: </label>
-                            <span data-ng-show="display"> {{author.name}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.name" data-ng-keyup="add($event)">
-                        </div>
-                        <div class="form-inline">
-                            <label class="col-md-3">Username: </label>
-                            <span data-ng-show="display"> {{author.username}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.username">
-                        </div>
-                        <div class="form-inline">
-                            <label class="col-md-3">Email: </label>
-                            <span data-ng-show="display"> {{author.email}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.email">
-                        </div>
-                        <div class="form-inline">
-                            <label class="col-md-3">Description: </label>
-                            <span data-ng-show="display"> {{author.description}}</span>
-                            <textarea data-ng-hide="display" type="text" class="form-control" data-ng-model="author.description" rows="5"></textarea>
-                        </div>
-                        <div class="form-inline">
-                            <label class="col-md-3">Quote: </label>
-                            <span data-ng-show="display"> {{author.quote}}</span>
-                            <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.quote">
-                        </div>
-                    </div>
-                </div>
-            </uib-tab>
-            <uib-tab heading="Messages" class="text-center">
-                <div class="well messages">
-                    <h1 class="text-center">Messages</h1>
-                    <div class="form-inline">
-                        <input data-ng-model="search[by]" class="form-control pull-left" type="text" placeholder="Search message...">
-                    </div>
-                    <div class="form-inline">
-                        <label>Order by: </label>
-                        <select data-ng-model="by" class="form-control">
-                            <option value="$"></option>
-                            <option value="date">Date (asc)</option>
-                            <option value="date">Date (desc)</option>
-                            <option value="from">From</option>
-                            <option value="body">Body</option>
-                        </select>
-                    </div>
-                    <ul>
-                        <li class="list-unstyled" data-ng-repeat="message in author.messages|orderBy:by|filter:search">
-                            <blockquote>
-                                {{message.body}}
-                                <br>
-                                <p class="text-warning pull-right">{{message.date}}</p>
-                                <p class="pull-left">From: <a href="#">{{message.from}}</a></p>
-                            </blockquote>
-                        </li>
-                    </ul>
-                </div>
-            </uib-tab>
-        </uib-tabset>
-    </div>
+    <h1 class="text-center padded">Admin</h1>
+    <br>
+    <h2>Users</h2>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Motto</th>
+        </tr>
+        <tr data-ng-repeat="user in users">
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>
+            <q>{{ user.quote }}</q>
+            <small>{{ user.quoteAuthor }}
+              in
+              <cite title="Source Title">{{ user.quoteSource }}</cite>
+            </small>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row tabs">
+    <uib-tabset justified="true">
+      <uib-tab heading="My Articles" class="text-center">
+        <div class="well">
+          <h1 class="text-center">My Articles</h1>
+          <br>
+          <article-body data-ng-repeat="article in art|orderBy:'_id'"></article-body>
+        </div>
+      </uib-tab>
+      <uib-tab heading="Add article" class="text-center">
+        <div class="well">
+          <h1 class="text-center">Add article</h1>
+          <form name="form.addArticle" id="form.addArticle" data-ng-submit="addArticletoDB(newArticle)">
+            <div class="form-group" data-ng-class="{'has-error': form.addArticle.title.$invalid && form.addArticle.title.$dirty, 'has-success': form.addArticle.title.$valid && form.addArticle.title.$dirty}">
+              <label for="title">Title</label>
+              <input type="text" id="title" class="form-control" name="title" data-ng-model="newArticle.title" placeholder="Enter title..." required />
+              <p data-ng-show="validate.required(form.addArticle.title)" class="help-block">Title is required.</p>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': form.addArticle.author.$invalid && form.addArticle.author.$dirty, 'has-success': form.addArticle.author.$valid && form.addArticle.author.$dirty}">
+              <label for="author">Author</label>
+              <input type="text" id="author" class="form-control" name="author" data-ng-model="newArticle.author.name" placeholder="Enter author..." required />
+              <p data-ng-show="validate.required(form.addArticle.author)" class="help-block">Author is required.</p>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': form.addArticle.contentTrimmed.$invalid && form.addArticle.contentTrimmed.$dirty, 'has-success': form.addArticle.contentTrimmed.$valid && form.addArticle.contentTrimmed.$dirty}">
+              <label for="body">Body</label>
+              <textarea id="body" class="form-control" name="content" data-ng-model="newArticle.content" placeholder="Type here..." rows="15" required></textarea>
+              <p data-ng-show="validate.required(form.addArticle.content)" class="help-block">Body is required.</p>
+            </div>
+            <div class="form-group" data-ng-class="{'has-error': form.addArticle.image.$invalid && form.addArticle.image.$dirty, 'has-success': form.addArticle.image.$valid && form.addArticle.image.$dirty}">
+              <label for="image">Picture</label>
+              <input type="file" name="image" id="image" file-upload data-ng-model="newArticle.image">
+              <p data-ng-show="validate.required(form.addArticle.image)" class="help-block">Body is required.</p>
+            </div>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <ui-select multiple tagging tagging-label="(custom 'new' label)" data-ng-init="defaultCategories" data-ng-model="newArticle.categories" theme="bootstrap" sortable="true" ng-disabled="disabled" title="Choose a category" class="form-control">
+                <ui-select-match placeholder="Select category...">{{$item.title}}</ui-select-match>
+                <ui-select-choices repeat="category in categories">{{category.title}}</ui-select-choices>
+              </ui-select>
+            </div>
+            <date-picker></date-picker>
+            <button type="submit" class="btn btn-warning btn-block btn-lg" data-ng-disabled="form.addArticle.$invalid">Add</button>
+            <div class="text-success" data-ng-show="successMessage"><strong>{{successMessage}}</strong></div>
+          </form>
+        </div>
+      </uib-tab>
+      <uib-tab heading="Profile" class="text-center">
+        <div class="well col-md-12 profile">
+          <h1 class="text-center">Profile</h1>
+          <div class="col-md-4">
+            <img data-ng-src="{{author.photo}}" alt="{{author._id}}" width="100%" class="img-thumbnail"/>
+            <h3 class="text-center" data-ng-hide="display">Change profile picture</h3>
+            <input type="file" name="photo" data-ng-hide="display">
+            <button class="btn btn-success btn-block btn-lg" data-ng-show="display" data-ng-click="edit()">Edit</button>
+            <button class="btn btn-info btn-block  btn-lg" data-ng-hide="display" data-ng-click="save()">Save</button>
+          </div>
+          <div class="col-md-8">
+            <div class="form-inline">
+              <label class="col-md-3">Name:
+              </label>
+              <span data-ng-show="display">
+                {{author.name}}</span>
+              <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.name" data-ng-keyup="add($event)">
+            </div>
+            <div class="form-inline">
+              <label class="col-md-3">Username:
+              </label>
+              <span data-ng-show="display">
+                {{author.username}}</span>
+              <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.username">
+            </div>
+            <div class="form-inline">
+              <label class="col-md-3">Email:
+              </label>
+              <span data-ng-show="display">
+                {{author.email}}</span>
+              <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.email">
+            </div>
+            <div class="form-inline">
+              <label class="col-md-3">Description:
+              </label>
+              <span data-ng-show="display">
+                {{author.description}}</span>
+              <textarea data-ng-hide="display" type="text" class="form-control" data-ng-model="author.description" rows="5"></textarea>
+            </div>
+            <div class="form-inline">
+              <label class="col-md-3">Quote:
+              </label>
+              <span data-ng-show="display">
+                {{author.quote}}</span>
+              <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.quote">
+            </div>
+            <div class="form-inline">
+              <label class="col-md-3">Quote author:
+              </label>
+              <span data-ng-show="display">
+                {{author.quoteAuthor}}</span>
+              <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.quoteAuthor">
+            </div>
+            <div class="form-inline">
+              <label class="col-md-3">Quote source:
+              </label>
+              <span data-ng-show="display">
+                {{author.quoteSource}}</span>
+              <input data-ng-hide="display" type="text" class="form-control" data-ng-model="author.quoteSource">
+            </div>
+          </div>
+        </div>
+      </uib-tab>
+      <uib-tab heading="Messages" class="text-center">
+        <div class="well messages">
+          <h1 class="text-center">Messages</h1>
+          <div class="form-inline">
+            <input data-ng-model="search[by]" class="form-control pull-left" type="text" placeholder="Search message...">
+          </div>
+          <div class="form-inline">
+            <label>Order by:
+            </label>
+            <select data-ng-model="by" class="form-control">
+              <option value="$"></option>
+              <option value="date">Date (asc)</option>
+              <option value="date">Date (desc)</option>
+              <option value="from">From</option>
+              <option value="body">Body</option>
+            </select>
+          </div>
+          <ul>
+            <li class="list-unstyled" data-ng-repeat="message in author.messages|orderBy:by|filter:search">
+              <blockquote>
+                {{message.body}}
+                <br>
+                <p class="text-warning pull-right">{{message.date}}</p>
+                <p class="pull-left">From:
+                  <a href="#">{{message.from}}</a>
+                </p>
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+      </uib-tab>
+    </uib-tabset>
+  </div>
 </div>

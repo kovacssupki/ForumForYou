@@ -6,7 +6,7 @@ exports = module.exports = ( v ) => {
             let count = validations.length,
                 body  = this.request.body,
                 bodyCount;
-
+console.log(body);
             if( strict ) {
                 bodyCount = body ? Object.keys( body ).length : 0;
             }

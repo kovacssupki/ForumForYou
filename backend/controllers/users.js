@@ -7,7 +7,7 @@ exports = module.exports = ( User ) => {
         var allUsers = yield User.find({});
         var currentUser = yield User.findOne({currentCookie: requestCookie});
         var users = {allUsers, currentUser}
-        console.log(users);
+        //console.log(users);
         this.success(users);
     };
 };

@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
     fs = require('fs'),
     path = require('path'),
     async = require('async');
+   var Grid = require('gridfs-stream');
 
     function setup(conn, sharding) {
         var dbName = conn.name,
@@ -47,12 +48,15 @@ var mongoose = require('mongoose'),
 exports = module.exports = (settings) => {
     var db = mongoose.connect(settings.dbUri, settings.dbOptions),
         conn = db.connection;
+       Grid.mongo = mongoose.mongo;
 
     if (settings.dbDebug) {
         mongoose.set('debug', true);
     }
 
     conn.once('connected', () => {
+   var gfs = Grid(conn.db);
+   app.set('gridfs', gfs);
         conn.on('reconnected', () => {
             console.error('[mongoose] reconnected to mongo');
         });

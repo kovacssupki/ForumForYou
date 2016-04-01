@@ -3,13 +3,11 @@
 exports = module.exports = ( Article, User) => {
     return function* ( ) {
       var requestCookie = this.cookies.get('LoginCookie');
-
         var currentUser = yield User.findOne({currentCookie: requestCookie});
-
-      var allArticles = yield Article.find({author: currentUser._id });
+      var allArticles = yield Article.find({author: currentUser._id }).populate('categories').populate('author');
       //var currentUser = yield User.findOne({currentCookie: requestCookie});
     //  var users = {allUsers, currentUser}
-      console.log(allArticles);
+      //console.log(allArticles);
       this.success(allArticles);
     };
 };
