@@ -4,8 +4,8 @@ angular
     '$scope',
     'DatePicker',
     'Validate',
-    'GetRequest', 'PutRequest',
-    function($scope, DatePicker, Validate, GetRequest, PutRequest) {
+    'GetRequest', 'PutRequest', 'fileReader',
+    function($scope, DatePicker, Validate, GetRequest, PutRequest, fileReader) {
       $scope.files = []; //files to be uploaded
       $scope.form={};
       $scope.search = {};
@@ -44,6 +44,33 @@ angular
           });
 
 
+          $scope.fileModel = {
+                 showLoading: false,
+                 readyToUpload: false,
+                 fileName: '',
+                 dataEncoded: ''
+             };
+
+
+          $scope.imageUpload = function(event){
+                 var file = event.target.files[0]; //FileList object
+                 fileReader.readAsDataUrl(file, $scope).then(
+                     function(result) {
+                         if (result) {
+                             $scope.fileModel.fileName = file.name;
+                             $scope.fileModel.dataEncoded = result;
+                             $scope.fileModel.readyToUpload = true;
+
+                             //console.log($scope.fileModel.fileName);
+                             //console.log($scope.fileModel.dataEncoded);
+                         }
+                     }
+                 );
+
+            }
+
+
+
       $scope.addArticletoDB = function(newArticle) {
         var sentNewArticle = newArticle;
         sentNewArticle.contentTrimmed = sentNewArticle.content.substr(0, 100) + "...";
@@ -52,6 +79,12 @@ angular
         sentNewArticle.categories = sentNewArticle.categories.map(function(el) {
           return el._id;
         });
+
+
+        sentNewArticle.image = {fileName: $scope.fileModel.fileName,
+        dataEncoded :  $scope.fileModel.dataEncoded };
+
+
 
         // var data = { sentNewArticle : sentNewArticle, files: $scope.files};
         // console.log(data);
@@ -66,7 +99,7 @@ angular
         //
         // console.log(formData);
 
-        PutRequest.put_data_file('../article/post', sentNewArticle).then(function(resp) { //save article in DB
+        PutRequest.put_data('../article/post', sentNewArticle).then(function(resp) { //save article in DB
           $scope.response = resp.data.data;
           console.log($scope.response);
           $scope.successMessage = "Article saved successfully";

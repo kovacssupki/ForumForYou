@@ -55,10 +55,10 @@
               <textarea id="body" class="form-control" name="content" data-ng-model="newArticle.content" placeholder="Type here..." rows="15" required></textarea>
               <p data-ng-show="validate.required(form.addArticle.content)" class="help-block">Body is required.</p>
             </div>
-            <div class="form-group" data-ng-class="{'has-error': form.addArticle.image.$invalid && form.addArticle.image.$dirty, 'has-success': form.addArticle.image.$valid && form.addArticle.image.$dirty}">
+            <div class="form-group" data-ng-class="{'has-error': form.addArticle.image.$invalid && form.addArticle.image.$dirty, 'has-success': form.addArticle.image.$valid && form.addArticle.image.$dirty}" >
               <label for="image">Picture</label>
-              <input type="file" name="image" id="image" file-upload data-ng-model="newArticle.image">
-              <p data-ng-show="validate.required(form.addArticle.image)" class="help-block">Body is required.</p>
+              <input type="file" name="image" id="image" data-ng-model="newArticle.image" onchange="angular.element(this).scope().imageUpload(event)">
+              <p data-ng-show="validate.required(form.addArticle.image)" class="help-block">Image is required.</p>
             </div>
             <div class="form-group">
               <label for="category">Category</label>
